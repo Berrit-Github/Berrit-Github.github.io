@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
 output: bookdown::html_document2
-bibliography: '`r rbbt::bbt_write_bib("info_projecticum_dsfb2.json", overwrite = TRUE)`'
+bibliography: '`r rbbt::bbt_write_bib("data/info_projecticum_dsfb2.json", overwrite = TRUE)`'
 date: "2023-04-25"
 ---
 

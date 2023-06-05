@@ -1,0 +1,9 @@
+---
+title: "06_cv_include_code"
+output: html_document
+date: "2023-06-05"
+---
+
+```{r cv, echo=F, out.width="100%", out.height="1500"}
+knitr::include_graphics('data/Berrit_CV.pdf')
+```
