@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+output: html_document
+date: "2023-05-08"
+---
+
+## map tree
+
+```{r}
+fs::dir_tree("data/daur2_tidy_data")
+```
+
