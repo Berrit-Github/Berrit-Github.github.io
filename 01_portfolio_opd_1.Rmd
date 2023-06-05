@@ -3,7 +3,7 @@ title: "portfolio_assignment_1_1"
 output: html_document
 date: "2023-04-17"
 ---
-## IC50 C.elegans experiment workflow
+# IC50 C.elegans experiment workflow
 C.elegans plate experiment
 
 Data for this experiment was provided by J.Louter (INT/ILC). In the experiment adult C.elegans nematodes were incubated by different concentration of different chemicals. after the incubation the amount of offspring was counted. Ethanol was used as a positive control and S-medium as the negative control.

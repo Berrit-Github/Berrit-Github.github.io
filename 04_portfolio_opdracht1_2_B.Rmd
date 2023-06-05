@@ -4,7 +4,7 @@ output: html_document
 date: "2023-05-22"
 ---
 ### the second part of data
-```{r setup, include=FALSE}
+```{r , include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 For the second part of looking at reproducing papers we are going to look at actual R code. the paper used is the same as in the previous page.first we take a look at the data https://doi.org/10.1101/2021.06.10.447970

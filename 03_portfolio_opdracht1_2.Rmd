@@ -3,7 +3,7 @@ title: "transpiracy Criteria"
 output: html_document
 date: "2023-05-22"
 ---
-## The importance of reproducible data.
+# The importance of reproducible data.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
