@@ -5,7 +5,7 @@ bibliography: '`r rbbt::bbt_write_bib("data/info_projecticum_dsfb2.json", overwr
 date: "2023-04-25"
 ---
 
-## introduction projecticum
+# introduction projecticum
 
 when an organism ages multiple bodily factors will decrease in function. eyesight , hearing and muscle strength are all examples of this. In case of muscle strength in which muscles mass and function decreases is called sacropenia. Normal and mostly young muscle react on the environmental stimuli to grow such as insulin and leucine. when stimulated they make muscle protein this processes is called muscle protein synthesis (MPS). This process needs to be up kept to counter natural muscle decay. In aged individuals it is shown that due a resistance to stimuli such as insulin and leucine and elderly individuals perform little muscle training, that the balance between MPS and natural muscle decay is in favor the decay of muscles and so causes sacropenia (@dijkImprovedMuscleFunction2016). 
 

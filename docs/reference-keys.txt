@@ -5,3 +5,5 @@ ic50-c.elegans-experiment-workflow
 map-tree
 the-importance-of-reproducible-data.
 the-second-part-of-data
+introduction-projecticum
+cv
