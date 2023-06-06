@@ -1,0 +1,79 @@
+---
+title: "portfolio opdracht 9"
+output: html_document
+date: "2023-05-25"
+params:
+  year:
+    label: "Year"
+    value: 2021
+    input: slider
+    min: 2020
+    max: 2022
+    step: 1
+    sep: ""
+  month:
+    label: "month"
+    value: 8
+    input: slider
+    min: 1
+    max: 12
+    step: 1
+    sep: ""
+  country:
+    label: "country:"
+    value: Croatia
+    input: select
+    choices: [Austria  ,Belgium, Bulgaria, Croatia ,Cyprus ,Czechia  ,Denmark, Estonia ,Finland,  France , Germany  ,Greece Hungary, Iceland, Ireland, Italy , Latvia  , Liechtenstein, Lithuania,  Luxembourg , Malta, Netherlands, Norway,  Poland, Portugal , Romania, Slovakia ,Slovenia, Spain ,Sweden ]
+  printcode:
+    label: "Display Code:"
+    value: TRUE
+
+---
+# parameters
+
+## loading the data
+first we are going to load the libraries into R studio
+```{r loading in the data }
+#these libraries need to be loaded
+
+library(utils)
+
+#read the Dataset sheet into “R”. The dataset will be called "data".
+data <- read.csv("https://opendata.ecdc.europa.eu/covid19/nationalcasedeath_eueea_daily_ei/csv", na.strings = "", fileEncoding = "UTF-8-BOM")
+```
+
+next I used the unique function to see which country and how many years the data had.
+```{r create graphs}
+library(tidyverse)
+
+unique(data$countriesAndTerritories)
+unique(data$year)
+```
+next I used these together with month to form some parameters for the markdown.
+with the filled in params I made a graph that showed how many cases per day in a month where shown
+```{r}
+
+
+data %>% filter(countriesAndTerritories == params$country) %>% filter(year == params$year) %>% filter(month == params$month)  %>% ggplot(aes(x= day , y = cases)) + geom_point(aes(color = "lightblue")) + geom_line(aes(color = "lightblue")) + scale_color_manual(values= "lightblue") + theme(legend.position = "none") + labs(title = paste("covid cases" , params$country , params$month , params$year , sep = " "))
+
+
+
+
+```
+
+next I also plotted this but for the amount of deaths
+```{r}
+data %>% filter(countriesAndTerritories == params$country) %>% filter(year == params$year) %>% filter(month == params$month)  %>% ggplot(aes(x= day , y = deaths )) + geom_point(aes(color = "darkred")) + geom_line(aes(color = "darkred")) + scale_color_manual(values= "darkred") + theme(legend.position = "none") + labs(title = paste("covid deaths" , params$country , params$month , params$year , sep = " "))
+```
+
+
+
+with the code :: you can change the parameters to 
+
+```{r}
+#rmarkdown::render("portfolio_opdracht9.Rmd", params = list(country = "Denmark", year = 2021, month = 8), output_file = "denmark_8_2021")
+
+#rmarkdown::render("~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd", params = "ask", output_file = "denmark_8_2021_params_ask")
+```
+
+if you run it it will open a new window in which you can set you params by a handy list.
