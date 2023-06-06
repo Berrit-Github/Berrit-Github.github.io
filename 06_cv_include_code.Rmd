@@ -6,5 +6,5 @@ date: "2023-06-05"
 
 # CV
 ```{r cv, echo=F, out.width="100%", out.height="1500"}
-#knitr::include_graphics('data/Berrit_CV.pdf')
+knitr::include_graphics('data/CV_for_port.pdf')
 ```

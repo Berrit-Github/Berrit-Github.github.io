@@ -1,0 +1,13 @@
+---
+title: "installing package"
+output: html_document
+date: "2023-06-06"
+---
+
+# easy IC50 plotting package
+
+I have made a package with wich IC50 data can easily be plotted it can be downloaded here
+```{r}
+devtools::install_github("Berrit-Github/easyIC50plotting")
+```
+
