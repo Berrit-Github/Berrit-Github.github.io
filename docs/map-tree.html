@@ -179,7 +179,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.0.1" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html#the-second-part-of-data"><i class="fa fa-check"></i><b>4.0.1</b> the second part of data</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>5</b> introduction projecticum</a></li>
-<li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
+<li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cv.html"><a href="cv.html#connecting-and-using-an-external-database"><i class="fa fa-check"></i><b>6.1</b> connecting and using an external database</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>7</b> Params</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -206,7 +209,51 @@ div.csl-indent {
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="map-tree.html#cb13-1" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">&quot;data/daur2_tidy_data&quot;</span>)</span></code></pre></div>
 <pre><code>## data/daur2_tidy_data
 ## ├── metagenomics_species_identification
-## └── RNA_sequencing</code></pre>
+## │   ├── metagenomics_excersises
+## │   │   ├── analysis
+## │   │   │   └── Metagenomics_exercise.Rmd
+## │   │   └── data
+## │   │       ├── bracken
+## │   │       │   ├── mock1.bracken
+## │   │       │   └── mock1_bracken_species.biom
+## │   │       ├── fastqc
+## │   │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.html
+## │   │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.zip
+## │   │       │   ├── HU1_MOCK1_L001_R2_001_fastqc.html
+## │   │       │   ├── HU1_MOCK1_L001_R2_001_fastqc.zip
+## │   │       │   └── README
+## │   │       ├── fastQC_quality_images
+## │   │       │   ├── quality_HU1_MOCK1_L001_R1_001.png
+## │   │       │   ├── quality_HU1_MOCK1_L001_R2_001.png
+## │   │       │   └── README
+## │   │       └── kraken2
+## │   │           ├── mock1.report
+## │   │           └── mock1_bracken_species.report
+## │   ├── metagenomics_formatieve_opdracht
+## │   │   ├── analysis
+## │   │   │   └── formatieve_opdracht.Rmd
+## │   │   └── data
+## │   │       ├── fastQC_files
+## │   │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.html
+## │   │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.zip
+## │   │       │   ├── HU2_MOCK2_L001_R2_001_fastqc.html
+## │   │       │   ├── HU2_MOCK2_L001_R2_001_fastqc.zip
+## │   │       │   └── README
+## │   │       └── fastQC_quality_pictures
+## │   │           ├── HU2_MOCK2_L001_R1_001.png
+## │   │           ├── HU2_MOCK2_L001_R2_001.png
+## │   │           └── README
+## │   └── setup_metafile
+## │       └── setup_meta_env.yml
+## └── RNA_sequencing
+##     └── airflow_practice_excercise
+##         ├── downloadfastq_command.sh
+##         ├── fastq_files
+##         ├── les2.Rproj
+##         ├── les2R.R
+##         ├── les3.Rproj
+##         ├── les3R.R
+##         └── les4R.R</code></pre>
 
 </div>
             </section>

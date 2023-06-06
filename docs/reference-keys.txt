@@ -7,4 +7,5 @@ the-importance-of-reproducible-data.
 the-second-part-of-data
 introduction-projecticum
 cv
+connecting-and-using-an-external-database
 params

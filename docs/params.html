@@ -179,7 +179,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.0.1" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html#the-second-part-of-data"><i class="fa fa-check"></i><b>4.0.1</b> the second part of data</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>5</b> introduction projecticum</a></li>
-<li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
+<li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="cv.html"><a href="cv.html#connecting-and-using-an-external-database"><i class="fa fa-check"></i><b>6.1</b> connecting and using an external database</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>7</b> Params</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -205,21 +208,22 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 7</span> Params<a href="params.html#params" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter we are going to make a rmarkdown with some parameters
 after adding our params we have the next html file in this we will show the covid cases and deaths of croatia of august 2021</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="params.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make screenshot of parameterized Rmarkdown</span></span>
-<span id="cb28-2"><a href="params.html#cb28-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;data/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="params.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make screenshot of parameterized Rmarkdown</span></span>
+<span id="cb41-2"><a href="params.html#cb41-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;data/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p>next we can render this rmarkdown in two ways
 with the first way we can render the new file by setting the params like so</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="params.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = list(country = &quot;Denmark&quot;, year = 2021, month = 8), output_file = &quot;denmark_8_2021&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="params.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = list(country = &quot;Denmark&quot;, year = 2021, month = 8), output_file = &quot;denmark_8_2021&quot;)</span></span></code></pre></div>
 <p>the second way is to replace the params with ask</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="params.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = &quot;ask&quot;, output_file = &quot;denmark_8_2021_params_ask&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="params.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = &quot;ask&quot;, output_file = &quot;denmark_8_2021_params_ask&quot;)</span></span></code></pre></div>
 <p>this will open a webpage with sliders and a list of country’s</p>
 <div class="figure">
 <img src="data/voorbeeld_params.PNG" alt="" />
 <p class="caption">example of the slider</p>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="params.html#cb31-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;data/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="params.html#cb44-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;data/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+after looking at the graphs in the new markdown you can see the data has changed arcorindgly to the given params</p>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div class="csl-entry">

@@ -12,10 +12,10 @@ firstly we load the flu dengue data from the repo and the gapminder data into da
 
 ```{r download/import the data}
 library(dslabs)
-Flu_data <- read.csv("~/Rschool/dsfb2_workflows_portfolio/tlsc-dsfb26v-20_workflows/data/flu_data.csv", skip = 11)
+Flu_data <- read.csv("~/Rschool/Berrit-Github.github.io/data/flu_data.csv", skip = 11)
 Flu_data <- as.data.frame(Flu_data)
 
-dengue_data <- read.csv("~/Rschool/dsfb2_workflows_portfolio/tlsc-dsfb26v-20_workflows/data/dengue_data.csv", skip = 11)
+dengue_data <- read.csv("~/Rschool/Berrit-Github.github.io/data/dengue_data.csv", skip = 11)
 dengue_data <- as.data.frame(dengue_data)
 
 gapminder <- as.data.frame(gapminder)  
@@ -28,7 +28,7 @@ Flu_data_tidy <- Flu_data %>% pivot_longer(cols = -c(Date) , names_to = "country
 
 dengue_data_tidy <- dengue_data %>% pivot_longer(cols = -c(Date) , names_to = "country" , values_to = "Weekly_searches")
 
-#gapminder <- gapminder %>% pivot_longer(cols = -c(country , year, continent , region) , names_to = "variable" , values_to = "values")
+gapminder <- gapminder %>% pivot_longer(cols = -c(country , year, continent , region) , names_to = "variable" , values_to = "values")
 
 ```
 
@@ -54,13 +54,11 @@ dengue_data_tidy <- dengue_data_tidy %>%
 
 dengue_data_tidy$year <- dengue_data_tidy$year %>% as.numeric()
 dengue_data_tidy[is.na(dengue_data_tidy)] <- 0
-#dengue_data_tidy
+
 Flu_data_tidy$year <- Flu_data_tidy$year %>% as.numeric()
 Flu_data_tidy[is.na(Flu_data_tidy)] <- 0
 
-#Flu_data_tidy
 
-#gapminder
 gapminder$country <- as.character(gapminder$country)
 gapminder$year <- as.numeric(gapminder$year)
 gapminder[is.na(gapminder)] <- 0
@@ -71,7 +69,7 @@ gapminder[is.na(gapminder)] <- 0
 
 now that the data is tidy and works with each other we write them back to a new map.
 
-```{r save the data as cvs and rds files , eval=FALSE, echo=TRUE}
+```{r save the data as cvs and rds files, eval=FALSE}
 write.csv(Flu_data_tidy ,  "C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht7/Flu_data_tidy.csv" , row.names = FALSE)
 write.csv(dengue_data_tidy ,"C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht7/dengue_data_tidy.csv" ,row.names = FALSE)
 write.csv(gapminder ,"C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht7/gapminder_data_tidy.csv" , row.names = FALSE)
@@ -97,12 +95,12 @@ library(DBI)
 
 After we have saved the data into the data base we can see out newly made databases in DBeaver we can check t contents of these dataframes with SQL code in dBeaver
 
-![In this picture we combined the flu and dengue data in 1 table to see both searches at the same time](portfolio_opdracht7/dengue_flu_data_combined.PNG)
-![In this figure we can see all the colums that are in the gap_data table](portfolio_opdracht7gap_data.PNG)
+![In this picture we combined the flu and dengue data in 1 table to see both searches at the same time](data/dengue_flu_data_combined.PNG)
+![In this figure we can see all the colums that are in the gap_data table](data/gap_data.PNG)
 
 next we are going to combine all three sets in one big table by using the connection command in the header we are connected to our data base in DBeaver. we use SQL language in rstudio to make the changes.
 
-![In this figure we can see all the colums that are in the gap_data table](portfolio_opdracht7SQL_join_tables.PNG)
+![In this figure we can see all the colums that are in the gap_data table](data/SQL_join_tables.PNG)
 ```{r join the gap flu and dengue data in 1 table, eval=FALSE, include=FALSE}
 create table all_data AS SELECT
    gap_data.country, gap_data.year , gap_data.infant_mortality , gap_data.life_expectancy ,gap_data.fertility ,gap_data.population, gap_data.gdp ,gap_data.continent , gap_data.region,  dengue_searches , flu_searches
@@ -121,7 +119,7 @@ ON
 
 ```
 ```{r , include=FALSE}
-all_data <- read.csv("portfolio_opdracht7/all_data.csv")
+all_data <- read.csv("data/all_data.csv")
 ```
 Now that we combined the data into a new table we call this back to R using the con vector to connect to the database while coding in R language.
 after pulling back the data we can also pivot the data to make it tidy this will make it easier to work with while plotting.
