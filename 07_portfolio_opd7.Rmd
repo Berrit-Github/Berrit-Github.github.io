@@ -3,7 +3,7 @@ title: "Untitled"
 output: html_document
 date: "2023-05-12"
 ---
-## connecting and using an external database
+# connecting and using an external database
 
 In this chapter I am going to show I used a external database (DBeaver) to store and process files.
 For this chapter we use the gapminder data of the dslabs package and the data from google about flu and dengue searches per country.

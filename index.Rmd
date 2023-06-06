@@ -1,18 +1,13 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "Personal Portfolio"
+author: "Berrit Kievith"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::gitbook,
-  set in the _output.yml file.
 link-citations: yes
-github-repo: rstudio/bookdown-demo
 ---
 
 # Welcome
@@ -21,21 +16,9 @@ welcome to my bookdown website.
 This website contains my portfolio excercises and my cv.
 you can look throuh the pages with the search bar on the right
 
-
-
 ```{r, eval=FALSE}
 bookdown::render_book()
 ```
-
-
-
-## Preview book
-
-
-```{r eval=FALSE}
-bookdown::serve_book()
-```
-
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
