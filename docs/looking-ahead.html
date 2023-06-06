@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Looking ahead | Untitled</title>
+  <meta name="description" content="Chapter 5 Looking ahead | Untitled" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Looking ahead | Untitled" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Looking ahead | Untitled" />
+  
+  
+  
+
+<meta name="author" content="Berrit Kievith" />
+
+
+<meta name="date" content="2023-04-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-importance-of-reproducible-data..html"/>
+<link rel="next" href="cv.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a></li>
+<li class="chapter" data-level="3" data-path="map-tree.html"><a href="map-tree.html"><i class="fa fa-check"></i><b>3</b> map tree</a></li>
+<li class="chapter" data-level="4" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html"><i class="fa fa-check"></i><b>4</b> The importance of reproducible data.</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html#the-second-part-of-data"><i class="fa fa-check"></i><b>4.1</b> the second part of data</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="looking-ahead.html"><a href="looking-ahead.html"><i class="fa fa-check"></i><b>5</b> Looking ahead</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="looking-ahead.html"><a href="looking-ahead.html#step-1-outlining-data"><i class="fa fa-check"></i><b>5.1</b> step 1 outlining data</a></li>
+<li class="chapter" data-level="5.2" data-path="looking-ahead.html"><a href="looking-ahead.html#step-2-getting-the-pixel-area"><i class="fa fa-check"></i><b>5.2</b> Step 2 getting the pixel area</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
+<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a></li>
+<li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
+<li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
+<li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Untitled</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="looking-ahead" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Looking ahead<a href="looking-ahead.html#looking-ahead" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>for this chapter we will be looking two years into the future and where I expect to be at that time.</p>
+<p>firstly I am not jet sure if I want to work or do a master after I graduate from the HU. So I could be either working had at a laboratory somewhere, it is important for me however that my work has a certain use for people. or I could be studding on my masters.</p>
+<p>as of right now I’m in my third year and still need to do an one year internship in Norway. for this Internship I will be working with spheroid assays. To familiarize myself with this assay i am going to design a process with which i can analyse these assays.</p>
+<p>for this project i am going to analyse some images from a spheroid assay and see if i can use R to contour the spheroid and give me the area it has grown over time.</p>
+<p>step 1 is for R studio to be able to draw the outline of the cells in an image. I plan to use the imager package for this and if necessary the magick package. I would also like to automate this but this can wait till after step 2.</p>
+<p>step 2 is for R studio to calculate the area of the of the cell (based on the given metadata aka: the zoom and starting size of the cells.)</p>
+<p>step 3 and last step is to R to able to this over every frame of a video/ be given a time to take an image. (if I say every 10 seconds or hour take the images)</p>
+<div id="step-1-outlining-data" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> step 1 outlining data<a href="looking-ahead.html#step-1-outlining-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>first we load the images into our R environment</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="looking-ahead.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we downloaded the pictures from the </span></span>
+<span id="cb27-2"><a href="looking-ahead.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;imager&quot;)</span></span>
+<span id="cb27-3"><a href="looking-ahead.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(&quot;sf&quot;)</span></span>
+<span id="cb27-4"><a href="looking-ahead.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="looking-ahead.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(imager)</span></code></pre></div>
+<pre><code>## Loading required package: magrittr</code></pre>
+<pre><code>## 
+## Attaching package: &#39;magrittr&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     set_names</code></pre>
+<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     extract</code></pre>
+<pre><code>## 
+## Attaching package: &#39;imager&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:magrittr&#39;:
+## 
+##     add</code></pre>
+<pre><code>## The following object is masked from &#39;package:stringr&#39;:
+## 
+##     boundary</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     where</code></pre>
+<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
+## 
+##     fill</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     convolve, spectrum</code></pre>
+<pre><code>## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     frame</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     save.image</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="looking-ahead.html#cb42-1" aria-hidden="true" tabindex="-1"></a>BLM_Day_1 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1.png&#39;</span>)</span>
+<span id="cb42-2"><a href="looking-ahead.html#cb42-2" aria-hidden="true" tabindex="-1"></a>BLM_Day_2 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2.png&#39;</span>)</span>
+<span id="cb42-3"><a href="looking-ahead.html#cb42-3" aria-hidden="true" tabindex="-1"></a>BLM_Day_3 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3.png&#39;</span>)</span>
+<span id="cb42-4"><a href="looking-ahead.html#cb42-4" aria-hidden="true" tabindex="-1"></a>BLM_Day_4 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4.png&#39;</span>)</span></code></pre></div>
+<p>after loading the pictures we convert them into greyscale. Most of the used images should already be greyscale but just in case we can cover for it.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="looking-ahead.html#cb43-1" aria-hidden="true" tabindex="-1"></a>BLM_Day_1_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_1)</span>
+<span id="cb43-2"><a href="looking-ahead.html#cb43-2" aria-hidden="true" tabindex="-1"></a>BLM_Day_2_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_2)</span>
+<span id="cb43-3"><a href="looking-ahead.html#cb43-3" aria-hidden="true" tabindex="-1"></a>BLM_Day_3_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_3)</span>
+<span id="cb43-4"><a href="looking-ahead.html#cb43-4" aria-hidden="true" tabindex="-1"></a>BLM_Day_4_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_4)</span></code></pre></div>
+<p>Next we need to remove the background shading. In most pictures there will be lighter and darker areas in the background to remove these we use lm to find the linear trend.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="looking-ahead.html#cb44-1" aria-hidden="true" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(BLM_Day_1_gray)</span>
+<span id="cb44-2"><a href="looking-ahead.html#cb44-2" aria-hidden="true" tabindex="-1"></a>m_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(value <span class="sc">~</span> x <span class="sc">+</span> y,<span class="at">data=</span>df_1) <span class="co">#linear trend</span></span>
+<span id="cb44-3"><a href="looking-ahead.html#cb44-3" aria-hidden="true" tabindex="-1"></a>im_1.g <span class="ot">&lt;-</span> BLM_Day_1_gray</span>
+<span id="cb44-4"><a href="looking-ahead.html#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="looking-ahead.html#cb44-5" aria-hidden="true" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(BLM_Day_2_gray)</span>
+<span id="cb44-6"><a href="looking-ahead.html#cb44-6" aria-hidden="true" tabindex="-1"></a>m_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(value <span class="sc">~</span> x <span class="sc">+</span> y,<span class="at">data=</span>df_2) <span class="co">#linear trend</span></span>
+<span id="cb44-7"><a href="looking-ahead.html#cb44-7" aria-hidden="true" tabindex="-1"></a>im_2.g <span class="ot">&lt;-</span> BLM_Day_2_gray</span>
+<span id="cb44-8"><a href="looking-ahead.html#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="looking-ahead.html#cb44-9" aria-hidden="true" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(BLM_Day_3_gray)</span>
+<span id="cb44-10"><a href="looking-ahead.html#cb44-10" aria-hidden="true" tabindex="-1"></a>m_3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(value <span class="sc">~</span> x <span class="sc">+</span> y,<span class="at">data=</span>df_3) <span class="co">#linear trend</span></span>
+<span id="cb44-11"><a href="looking-ahead.html#cb44-11" aria-hidden="true" tabindex="-1"></a>im_3.g <span class="ot">&lt;-</span> BLM_Day_3_gray</span>
+<span id="cb44-12"><a href="looking-ahead.html#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="looking-ahead.html#cb44-13" aria-hidden="true" tabindex="-1"></a>df_4 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(BLM_Day_4_gray)</span>
+<span id="cb44-14"><a href="looking-ahead.html#cb44-14" aria-hidden="true" tabindex="-1"></a>m_4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(value <span class="sc">~</span> x <span class="sc">+</span> y,<span class="at">data=</span>df_4) <span class="co">#linear trend</span></span>
+<span id="cb44-15"><a href="looking-ahead.html#cb44-15" aria-hidden="true" tabindex="-1"></a>im_4.g <span class="ot">&lt;-</span> BLM_Day_4_gray</span></code></pre></div>
+<p>after finding the linear trend we fit this over the original image. I used image 4 as an example with the before and after picture.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="looking-ahead.html#cb45-1" aria-hidden="true" tabindex="-1"></a>im_1.f <span class="ot">&lt;-</span> im_1.g<span class="sc">-</span><span class="fu">fitted</span>(m_1)</span>
+<span id="cb45-2"><a href="looking-ahead.html#cb45-2" aria-hidden="true" tabindex="-1"></a>im_2.f <span class="ot">&lt;-</span> im_2.g<span class="sc">-</span><span class="fu">fitted</span>(m_2)</span>
+<span id="cb45-3"><a href="looking-ahead.html#cb45-3" aria-hidden="true" tabindex="-1"></a>im_3.f <span class="ot">&lt;-</span> im_3.g<span class="sc">-</span><span class="fu">fitted</span>(m_3)</span>
+<span id="cb45-4"><a href="looking-ahead.html#cb45-4" aria-hidden="true" tabindex="-1"></a>im_4.f <span class="ot">&lt;-</span> im_4.g<span class="sc">-</span><span class="fu">fitted</span>(m_4)</span>
+<span id="cb45-5"><a href="looking-ahead.html#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="looking-ahead.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
+<span id="cb45-7"><a href="looking-ahead.html#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_4_gray , <span class="at">main=</span><span class="st">&quot;Before&quot;</span>)</span>
+<span id="cb45-8"><a href="looking-ahead.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f , <span class="at">main=</span><span class="st">&quot;After trend removal&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>so now that we have a nice even picture we are going to determine the threshold.
+the threshol shows us what part of the picture stands out the most hard lines and blotches of darker colour stand out. how much much the threshold will depend on how high or low you set it. in the example we have set the threshold to 25 , 15 and 5 % and we can examine it with the original picture.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="looking-ahead.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
+<span id="cb46-2"><a href="looking-ahead.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
+<span id="cb46-3"><a href="looking-ahead.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">15</span>,<span class="dv">5</span>),<span class="st">&quot;%&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">map_il</span>(<span class="sc">~</span> <span class="fu">threshold</span>(im_4.f,.)) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">layout=</span><span class="st">&quot;row&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-15-2.png" width="672" />
+5% is very low and you almost see noting of the lines, 25% gives a bit more detail than there is truly in the picture. 15% seems to be on the right track we are going to continue with that one and see if we can get a more detaild picture</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="looking-ahead.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
+<span id="cb47-2"><a href="looking-ahead.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
+<span id="cb47-3"><a href="looking-ahead.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">15</span>,<span class="dv">13</span>),<span class="st">&quot;%&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">map_il</span>(<span class="sc">~</span> <span class="fu">threshold</span>(im_4.f,.)) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">layout=</span><span class="st">&quot;row&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-16-2.png" width="672" />
+there are small differences in these pictures which concerns the small spots around the cell the closest we are going to get is probably the 17% one so we continue our analysis with that.
+We are going to save the 17% threshold into an new vector.
+Next we will convert this to a pixel set. we repeat the process of checking the threshold for every cell. it does not have to be perfect yet we can clean up in the next step</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="looking-ahead.html#cb48-1" aria-hidden="true" tabindex="-1"></a>im_1.t <span class="ot">&lt;-</span> <span class="fu">threshold</span>(im_1.f,<span class="st">&quot;3%&quot;</span>)</span>
+<span id="cb48-2"><a href="looking-ahead.html#cb48-2" aria-hidden="true" tabindex="-1"></a>px_1 <span class="ot">&lt;-</span> <span class="fu">as.pixset</span>(<span class="dv">1</span><span class="sc">-</span>im_1.t) <span class="co">#Convert to pixset</span></span>
+<span id="cb48-3"><a href="looking-ahead.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="looking-ahead.html#cb48-4" aria-hidden="true" tabindex="-1"></a>im_2.t <span class="ot">&lt;-</span> <span class="fu">threshold</span>(im_3.f,<span class="st">&quot;4%&quot;</span>)</span>
+<span id="cb48-5"><a href="looking-ahead.html#cb48-5" aria-hidden="true" tabindex="-1"></a>px_2 <span class="ot">&lt;-</span> <span class="fu">as.pixset</span>(<span class="dv">1</span><span class="sc">-</span>im_2.t) <span class="co">#Convert to pixset</span></span>
+<span id="cb48-6"><a href="looking-ahead.html#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="looking-ahead.html#cb48-7" aria-hidden="true" tabindex="-1"></a>im_3.t <span class="ot">&lt;-</span> <span class="fu">threshold</span>(im_3.f,<span class="st">&quot;7%&quot;</span>)</span>
+<span id="cb48-8"><a href="looking-ahead.html#cb48-8" aria-hidden="true" tabindex="-1"></a>px_3 <span class="ot">&lt;-</span> <span class="fu">as.pixset</span>(<span class="dv">1</span><span class="sc">-</span>im_3.t) <span class="co">#Convert to pixset</span></span>
+<span id="cb48-9"><a href="looking-ahead.html#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="looking-ahead.html#cb48-10" aria-hidden="true" tabindex="-1"></a>im_4.t <span class="ot">&lt;-</span> <span class="fu">threshold</span>(im_4.f,<span class="st">&quot;18%&quot;</span>)</span>
+<span id="cb48-11"><a href="looking-ahead.html#cb48-11" aria-hidden="true" tabindex="-1"></a>px_4 <span class="ot">&lt;-</span> <span class="fu">as.pixset</span>(<span class="dv">1</span><span class="sc">-</span>im_4.t) <span class="co">#Convert to pixset</span></span>
+<span id="cb48-12"><a href="looking-ahead.html#cb48-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-13"><a href="looking-ahead.html#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_4)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+this is the result of the pixelset, the pixel set ecentially marks every pixel that was black in the threshold.
+now we can use the fill and clean command on this to clear of some of the pixels we don’t want and highlight the left over pixels.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="looking-ahead.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
+<span id="cb49-2"><a href="looking-ahead.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_1)</span></span>
+<span id="cb49-3"><a href="looking-ahead.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_1,6) %&gt;% clean(3) </span></span>
+<span id="cb49-4"><a href="looking-ahead.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-5"><a href="looking-ahead.html#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2_circle.png&#39;)</span></span>
+<span id="cb49-6"><a href="looking-ahead.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_2)</span></span>
+<span id="cb49-7"><a href="looking-ahead.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_2,6) %&gt;% clean(2) </span></span>
+<span id="cb49-8"><a href="looking-ahead.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-9"><a href="looking-ahead.html#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3_circle.png&#39;)</span></span>
+<span id="cb49-10"><a href="looking-ahead.html#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_3)</span></span>
+<span id="cb49-11"><a href="looking-ahead.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_3,5) %&gt;% clean(0.5) </span></span>
+<span id="cb49-12"><a href="looking-ahead.html#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb49-13"><a href="looking-ahead.html#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4_circle.png&#39;)</span></span>
+<span id="cb49-14"><a href="looking-ahead.html#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_4)</span></span>
+<span id="cb49-15"><a href="looking-ahead.html#cb49-15" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_4,6) %&gt;% clean(1.5) </span></span>
+<span id="cb49-16"><a href="looking-ahead.html#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="looking-ahead.html#cb49-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-18"><a href="looking-ahead.html#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
+<span id="cb49-19"><a href="looking-ahead.html#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_4,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">1.5</span>) <span class="sc">%&gt;%</span> highlight</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+here we can see the result of our plotting. its important that the complete cell is seround by the red border and that as many of the left over cells are included in that border. it is also important that it is disconnected from the discoloration in the bottom right.
+next we want to select the main body of our analysis we do this locating the middle of our image with the summarise function next we will put the outcome of this into the px.flood command this will select the whole white body that is part of the middle</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="looking-ahead.html#cb50-1" aria-hidden="true" tabindex="-1"></a>px_1 <span class="ot">&lt;-</span> <span class="fu">fill</span>(px_1,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">3</span>) </span>
+<span id="cb50-2"><a href="looking-ahead.html#cb50-2" aria-hidden="true" tabindex="-1"></a>px_2 <span class="ot">&lt;-</span> <span class="fu">fill</span>(px_2,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">2</span>) </span>
+<span id="cb50-3"><a href="looking-ahead.html#cb50-3" aria-hidden="true" tabindex="-1"></a>px_3 <span class="ot">&lt;-</span> <span class="fu">fill</span>(px_3,<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">0.5</span>) </span>
+<span id="cb50-4"><a href="looking-ahead.html#cb50-4" aria-hidden="true" tabindex="-1"></a>px_4 <span class="ot">&lt;-</span> <span class="fu">fill</span>(px_4,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">1.5</span>)</span>
+<span id="cb50-5"><a href="looking-ahead.html#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="looking-ahead.html#cb50-6" aria-hidden="true" tabindex="-1"></a>px_1_middle <span class="ot">&lt;-</span> imager<span class="sc">::</span><span class="fu">where</span>(px_1) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">mx=</span><span class="fu">mean</span>(x),<span class="at">my=</span><span class="fu">mean</span>(y))</span>
+<span id="cb50-7"><a href="looking-ahead.html#cb50-7" aria-hidden="true" tabindex="-1"></a>px_2_middle <span class="ot">&lt;-</span> imager<span class="sc">::</span><span class="fu">where</span>(px_2) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">mx=</span><span class="fu">mean</span>(x),<span class="at">my=</span><span class="fu">mean</span>(y))</span>
+<span id="cb50-8"><a href="looking-ahead.html#cb50-8" aria-hidden="true" tabindex="-1"></a>px_3_middle <span class="ot">&lt;-</span> imager<span class="sc">::</span><span class="fu">where</span>(px_3) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">mx=</span><span class="fu">mean</span>(x),<span class="at">my=</span><span class="fu">mean</span>(y))</span>
+<span id="cb50-9"><a href="looking-ahead.html#cb50-9" aria-hidden="true" tabindex="-1"></a>px_4_middle <span class="ot">&lt;-</span> imager<span class="sc">::</span><span class="fu">where</span>(px_4) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">mx=</span><span class="fu">mean</span>(x),<span class="at">my=</span><span class="fu">mean</span>(y))</span>
+<span id="cb50-10"><a href="looking-ahead.html#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="looking-ahead.html#cb50-11" aria-hidden="true" tabindex="-1"></a>px_1 <span class="ot">&lt;-</span> <span class="fu">px.flood</span>(px_1, <span class="fu">round</span>(px_1_middle<span class="sc">$</span>mx),<span class="fu">round</span>(px_4_middle<span class="sc">$</span>my),<span class="at">sigma=</span>.<span class="dv">0001</span>) </span>
+<span id="cb50-12"><a href="looking-ahead.html#cb50-12" aria-hidden="true" tabindex="-1"></a>px_2 <span class="ot">&lt;-</span> <span class="fu">px.flood</span>(px_2, <span class="fu">round</span>(px_2_middle<span class="sc">$</span>mx),<span class="fu">round</span>(px_4_middle<span class="sc">$</span>my),<span class="at">sigma=</span>.<span class="dv">0001</span>) </span>
+<span id="cb50-13"><a href="looking-ahead.html#cb50-13" aria-hidden="true" tabindex="-1"></a>px_3 <span class="ot">&lt;-</span> <span class="fu">px.flood</span>(px_3, <span class="fu">round</span>(px_3_middle<span class="sc">$</span>mx),<span class="fu">round</span>(px_4_middle<span class="sc">$</span>my),<span class="at">sigma=</span>.<span class="dv">0001</span>) </span>
+<span id="cb50-14"><a href="looking-ahead.html#cb50-14" aria-hidden="true" tabindex="-1"></a>px_4 <span class="ot">&lt;-</span> <span class="fu">px.flood</span>(px_4, <span class="fu">round</span>(px_4_middle<span class="sc">$</span>mx),<span class="fu">round</span>(px_4_middle<span class="sc">$</span>my),<span class="at">sigma=</span>.<span class="dv">0001</span>) </span>
+<span id="cb50-15"><a href="looking-ahead.html#cb50-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-16"><a href="looking-ahead.html#cb50-16" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="looking-ahead.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_1)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="looking-ahead.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_2)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="looking-ahead.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_3)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-3.png" width="672" /></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="looking-ahead.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_4)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-4.png" width="672" />
+now we have a pixel set with the outline of our cells.</p>
+</div>
+<div id="step-2-getting-the-pixel-area" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Step 2 getting the pixel area<a href="looking-ahead.html#step-2-getting-the-pixel-area" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>with this pixelset we can calculate the pixels of the cells in this image</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="looking-ahead.html#cb56-1" aria-hidden="true" tabindex="-1"></a>px_1</span></code></pre></div>
+<pre><code>## Pixel set of size 703. Width: 125 pix Height: 106 pix Depth: 1 Colour channels: 1</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="looking-ahead.html#cb58-1" aria-hidden="true" tabindex="-1"></a>px_2</span></code></pre></div>
+<pre><code>## Pixel set of size 1175. Width: 125 pix Height: 106 pix Depth: 1 Colour channels: 1</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="looking-ahead.html#cb60-1" aria-hidden="true" tabindex="-1"></a>px_3</span></code></pre></div>
+<pre><code>## Pixel set of size 1634. Width: 125 pix Height: 106 pix Depth: 1 Colour channels: 1</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="looking-ahead.html#cb62-1" aria-hidden="true" tabindex="-1"></a>px_4</span></code></pre></div>
+<pre><code>## Pixel set of size 5373. Width: 125 pix Height: 106 pix Depth: 1 Colour channels: 1</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="looking-ahead.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># percentage pixels of the total picture</span></span>
+<span id="cb64-2"><a href="looking-ahead.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>(<span class="fu">sum</span>(px_1) <span class="sc">/</span> (<span class="fu">height</span>(px_1) <span class="sc">*</span> <span class="fu">width</span>(px_1)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;5.31 %&quot;</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="looking-ahead.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>(<span class="fu">sum</span>(px_2) <span class="sc">/</span> (<span class="fu">height</span>(px_2) <span class="sc">*</span> <span class="fu">width</span>(px_2)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;8.87 %&quot;</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="looking-ahead.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>(<span class="fu">sum</span>(px_3) <span class="sc">/</span> (<span class="fu">height</span>(px_3) <span class="sc">*</span> <span class="fu">width</span>(px_3)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;12.33 %&quot;</code></pre>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="looking-ahead.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>(<span class="fu">sum</span>(px_4) <span class="sc">/</span> (<span class="fu">height</span>(px_4) <span class="sc">*</span> <span class="fu">width</span>(px_4)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;40.55 %&quot;</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="looking-ahead.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">#percentage growth after day 1</span></span>
+<span id="cb72-2"><a href="looking-ahead.html#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>((<span class="fu">sum</span>(px_1)<span class="sc">-</span><span class="fu">sum</span>(px_1)) <span class="sc">/</span> (<span class="fu">height</span>(px_1) <span class="sc">*</span> <span class="fu">width</span>(px_1)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;0 %&quot;</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="looking-ahead.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>((<span class="fu">sum</span>(px_2)<span class="sc">-</span><span class="fu">sum</span>(px_1)) <span class="sc">/</span> (<span class="fu">height</span>(px_2) <span class="sc">*</span> <span class="fu">width</span>(px_2)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;3.56 %&quot;</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="looking-ahead.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>((<span class="fu">sum</span>(px_3)<span class="sc">-</span><span class="fu">sum</span>(px_1)) <span class="sc">/</span> (<span class="fu">height</span>(px_3) <span class="sc">*</span> <span class="fu">width</span>(px_3)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;7.03 %&quot;</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="looking-ahead.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>((<span class="fu">sum</span>(px_4)<span class="sc">-</span><span class="fu">sum</span>(px_1)) <span class="sc">/</span> (<span class="fu">height</span>(px_4) <span class="sc">*</span> <span class="fu">width</span>(px_4)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;35.25 %&quot;</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="looking-ahead.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;</span>)</span>
+<span id="cb80-2"><a href="looking-ahead.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_1)</span>
+<span id="cb80-3"><a href="looking-ahead.html#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_1,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> highlight</span>
+<span id="cb80-4"><a href="looking-ahead.html#cb80-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-5"><a href="looking-ahead.html#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2_circle.png&#39;</span>)</span>
+<span id="cb80-6"><a href="looking-ahead.html#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_2)</span>
+<span id="cb80-7"><a href="looking-ahead.html#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_2,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> highlight</span>
+<span id="cb80-8"><a href="looking-ahead.html#cb80-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-9"><a href="looking-ahead.html#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3_circle.png&#39;</span>)</span>
+<span id="cb80-10"><a href="looking-ahead.html#cb80-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_3)</span>
+<span id="cb80-11"><a href="looking-ahead.html#cb80-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_3,<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">0.5</span>) <span class="sc">%&gt;%</span> highlight</span>
+<span id="cb80-12"><a href="looking-ahead.html#cb80-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="looking-ahead.html#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4_circle.png&#39;</span>)</span>
+<span id="cb80-14"><a href="looking-ahead.html#cb80-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_4)</span>
+<span id="cb80-15"><a href="looking-ahead.html#cb80-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_4,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">1.5</span>) <span class="sc">%&gt;%</span> highlight</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="looking-ahead.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colorise(BLM_Day_1,px,&quot;red&quot;,alpha=.5) %&gt;% plot</span></span>
+<span id="cb81-2"><a href="looking-ahead.html#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(px) </span></span>
+<span id="cb81-3"><a href="looking-ahead.html#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="co"># view(px)</span></span>
+<span id="cb81-4"><a href="looking-ahead.html#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="co"># imager::where(px) %&gt;% dplyr::summarise(mx=mean(x),my=mean(y))</span></span>
+<span id="cb81-5"><a href="looking-ahead.html#cb81-5" aria-hidden="true" tabindex="-1"></a><span class="co"># #BLM_Day_1_circle &lt;- load.image(&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
+<span id="cb81-6"><a href="looking-ahead.html#cb81-6" aria-hidden="true" tabindex="-1"></a><span class="co"># #unique()</span></span>
+<span id="cb81-7"><a href="looking-ahead.html#cb81-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sum(px)</span></span>
+<span id="cb81-8"><a href="looking-ahead.html#cb81-8" aria-hidden="true" tabindex="-1"></a><span class="co"># px</span></span>
+<span id="cb81-9"><a href="looking-ahead.html#cb81-9" aria-hidden="true" tabindex="-1"></a><span class="co"># BLM_Day_1</span></span></code></pre></div>
+<!-- # type 1 other -->
+<!-- ```{r} -->
+<!-- plot(BLM_Day_1) -->
+<!-- threshold(BLM_Day_1) %>% plot -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- library(dplyr) -->
+<!-- data_d1 <- as.data.frame(BLM_Day_1) -->
+<!-- ##Subsamble, fit a linear model -->
+<!-- sub_d1 <- sample_n(data_d1,1e4) %>% lm(value ~ x*y,data=.)  -->
+<!-- ##Correct by removing the trend -->
+<!-- cor_d1 <- BLM_Day_1-predict(sub_d1,data_d1) -->
+<!-- out <- threshold(cor_d1) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- out <- clean(out,3) %>% imager::fill(7) -->
+<!-- plot(BLM_Day_1) -->
+<!-- highlight(out) -->
+<!-- ``` -->
+<!-- ## watershed -->
+<!-- ```{r} -->
+<!-- bg <- (!threshold(cor_d1,"10%")) -->
+<!-- fg <- (threshold(cor_d1,"90%")) -->
+<!-- imlist(fg,bg) %>% plot(layout="row") -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- seed <- bg+2*fg -->
+<!-- plot(seed) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- edges <- imgradient(BLM_Day_1,"xy") %>% enorm -->
+<!-- p <- 1/(1+edges) -->
+<!-- plot(p) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- ws <- (watershed(seed,p)==1) -->
+<!-- plot(ws) -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- library(tidyverse) -->
+<!-- ws <- bucketfill(ws,1,1, color = "white") %>% {!( . == 2) } -->
+<!-- plot(ws) -->
+<!-- ``` -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-importance-of-reproducible-data..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cv.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05_portfolio_opdracht3_2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"split_bib": false
+});
+});
+</script>
+
+</body>
+
+</html>
