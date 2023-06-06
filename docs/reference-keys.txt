@@ -1,11 +1,14 @@
 fig:l-q-response
 welcome
-preview-book
 ic50-c.elegans-experiment-workflow
 map-tree
 the-importance-of-reproducible-data.
 the-second-part-of-data
-introduction-projecticum
+looking-ahead
+step-1-outlining-data
+step-2-getting-the-pixel-area
 cv
 connecting-and-using-an-external-database
+easy-ic50-plotting-package
 params
+introduction-projecticum
