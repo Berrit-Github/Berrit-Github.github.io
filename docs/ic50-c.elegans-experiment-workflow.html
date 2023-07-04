@@ -146,7 +146,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="data/style.css" type="text/css" />
 </head>
 
 <body>
@@ -159,11 +159,15 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./"></a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
-<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a></li>
+<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#analysis-plan"><i class="fa fa-check"></i><b>2.1</b> analysis plan</a></li>
+<li class="chapter" data-level="2.2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#excecution"><i class="fa fa-check"></i><b>2.2</b> excecution</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="map-tree.html"><a href="map-tree.html"><i class="fa fa-check"></i><b>3</b> map tree</a></li>
 <li class="chapter" data-level="4" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html"><i class="fa fa-check"></i><b>4</b> The importance of reproducible data.</a>
 <ul>
@@ -175,7 +179,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="looking-ahead.html"><a href="looking-ahead.html#step-2-getting-the-pixel-area"><i class="fa fa-check"></i><b>5.2</b> Step 2 getting the pixel area</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
-<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a></li>
+<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#data-processing-and-dbeaver"><i class="fa fa-check"></i><b>7.1</b> data processing and DBeaver</a></li>
+<li class="chapter" data-level="7.2" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#results"><i class="fa fa-check"></i><b>7.2</b> results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
 <li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
@@ -203,7 +211,19 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 2</span> IC50 C.elegans experiment workflow<a href="ic50-c.elegans-experiment-workflow.html#ic50-c.elegans-experiment-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>C.elegans plate experiment</p>
 <p>Data for this experiment was provided by J.Louter (INT/ILC). In the experiment adult C.elegans nematodes were incubated by different concentration of different chemicals. after the incubation the amount of offspring was counted. Ethanol was used as a positive control and S-medium as the negative control.</p>
-<p>For a full IC50 analysis the averages of the compounds should be merged. this can be plotted out in a line graph. then at the middle between the lowest and highest point on that spot on the X-axis is the IC50. after doing this for all the chemicals they can be compared.</p>
+<div id="analysis-plan" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> analysis plan<a href="ic50-c.elegans-experiment-workflow.html#analysis-plan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a full IC50
+1. firstly the data should be checked for outlines
+2. Next we take the averages of each compound by different concentrations
+2. these results can be plotted out in to a graph with lines.
+3. we check what the highest and the lowest point is of the measurements and calculate the middle between these points.
+4. Than we check the graph where this measurement is reached and what the concentration is of the compound.
+5. with these results the concentrations can be compared.</p>
+</div>
+<div id="excecution" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> excecution<a href="ic50-c.elegans-experiment-workflow.html#excecution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For this analysis we going t work through the first 2 steps to show of how this works in R</p>
 <p>first we open and save the data file to our R console.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ic50-c.elegans-experiment-workflow.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb2-2"><a href="ic50-c.elegans-experiment-workflow.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -255,11 +275,11 @@ before we can work with the data we are going to change these to the right data 
 <p>Next we are going to plot the data. we want the component concentration on the X-axis and the number of offspring on the Y-axis. for better viability we give the different components colours and the experimental conditions a different shape</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ic50-c.elegans-experiment-workflow.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="ic50-c.elegans-experiment-workflow.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> )</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>hmmm.. that does not tell us a whole lot about the data now does it. lets add a log10 transformation to the X-axis to even it out more. next we are going to add some jitter to points just to see the individual points better.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="ic50-c.elegans-experiment-workflow.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb8-2"><a href="ic50-c.elegans-experiment-workflow.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>To really understand the effects of each component we are going to normalize the data. first we make the mean value of the negative control equal to one. then we will convert the other data to be a fraction of the negative control. we make a new vector with the new data and plot this like we did before.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ic50-c.elegans-experiment-workflow.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view(onderzoek_data_portfolie_1)</span></span>
 <span id="cb9-2"><a href="ic50-c.elegans-experiment-workflow.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -270,9 +290,10 @@ before we can work with the data we are going to change these to the right data 
 <span id="cb11-2"><a href="ic50-c.elegans-experiment-workflow.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="ic50-c.elegans-experiment-workflow.html#cb11-3" aria-hidden="true" tabindex="-1"></a>onderzoek_data_portfolie_1_newraw<span class="sc">$</span>RawData <span class="ot">&lt;-</span> onderzoek_data_portfolie_1_newraw<span class="sc">$</span>RawData<span class="sc">/</span><span class="fu">mean</span>(ngative_stuff<span class="sc">$</span>RawData)</span>
 <span id="cb11-4"><a href="ic50-c.elegans-experiment-workflow.html#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="ic50-c.elegans-experiment-workflow.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1_newraw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<span id="cb11-5"><a href="ic50-c.elegans-experiment-workflow.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1_newraw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
+</div>
 </div>
             </section>
 

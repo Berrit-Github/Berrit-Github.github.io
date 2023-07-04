@@ -1,6 +1,8 @@
 fig:l-q-response
 welcome
 ic50-c.elegans-experiment-workflow
+analysis-plan
+excecution
 map-tree
 the-importance-of-reproducible-data.
 the-second-part-of-data
@@ -9,6 +11,8 @@ step-1-outlining-data
 step-2-getting-the-pixel-area
 cv
 connecting-and-using-an-external-database
+data-processing-and-dbeaver
+results
 easy-ic50-plotting-package
 params
 introduction-projecticum

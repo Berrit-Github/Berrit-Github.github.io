@@ -146,7 +146,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="data/style.css" type="text/css" />
 </head>
 
 <body>
@@ -159,11 +159,15 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./"></a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
-<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a></li>
+<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#analysis-plan"><i class="fa fa-check"></i><b>2.1</b> analysis plan</a></li>
+<li class="chapter" data-level="2.2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#excecution"><i class="fa fa-check"></i><b>2.2</b> excecution</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="map-tree.html"><a href="map-tree.html"><i class="fa fa-check"></i><b>3</b> map tree</a></li>
 <li class="chapter" data-level="4" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html"><i class="fa fa-check"></i><b>4</b> The importance of reproducible data.</a>
 <ul>
@@ -175,7 +179,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="looking-ahead.html"><a href="looking-ahead.html#step-2-getting-the-pixel-area"><i class="fa fa-check"></i><b>5.2</b> Step 2 getting the pixel area</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
-<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a></li>
+<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#data-processing-and-dbeaver"><i class="fa fa-check"></i><b>7.1</b> data processing and DBeaver</a></li>
+<li class="chapter" data-level="7.2" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#results"><i class="fa fa-check"></i><b>7.2</b> results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
 <li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
@@ -201,11 +209,16 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="looking-ahead" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Looking ahead<a href="looking-ahead.html#looking-ahead" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>for this chapter we will be looking two years into the future and where I expect to be at that time.</p>
-<p>firstly I am not jet sure if I want to work or do a master after I graduate from the HU. So I could be either working had at a laboratory somewhere, it is important for me however that my work has a certain use for people. or I could be studding on my masters.</p>
-<p>as of right now I’m in my third year and still need to do an one year internship in Norway. for this Internship I will be working with spheroid assays. To familiarize myself with this assay i am going to design a process with which i can analyse these assays.</p>
-<p>for this project i am going to analyse some images from a spheroid assay and see if i can use R to contour the spheroid and give me the area it has grown over time.</p>
-<p>step 1 is for R studio to be able to draw the outline of the cells in an image. I plan to use the imager package for this and if necessary the magick package. I would also like to automate this but this can wait till after step 2.</p>
+<p>for this chapter we will be looking two years into the future and where I expect to be at that time. In addition I will also make a plan and execute it for a skill I think is handy to have in these future job ideas</p>
+<p>firstly I am not yet sure if I want to work or do a master after I graduate from the HU.
+On one side I have already have a lot of experience working because I did multiple internships. I enjoyed most of the work I did and with what I learned during my bachelor I feel like I could do some really good work out there.</p>
+<p>On the other side I do enjoy studying a whole lot as long as I find the subject interesting. I also don’t want to regret later that if I could have studied more.</p>
+<p>Overall I think I would be happy with both, I think the most important part about studying or working is to find satisfaction and meaning in what I do.</p>
+<p>Still i want to show how I going about learning a new skill so I will look into what is happening in the upcoming year.</p>
+<p>As of right now I’m in my third year and still need to do an one year internship in Norway. The lab I will be working at does research into matrix biology. Specifically looking at an intergrin called alpha11beta1. This intergrin is present on normal fibroblasts and carcinoma-associated fibroblasts. Because it is not completely know how this protein works and what effects of it are during cancer development we research it.</p>
+<p>For this Internship I will be working with spheroid assays. This assay shows the growth of a small clump of tumor cells (the spheroid) over multiple hours and/or days. I want to familiarize myself with the technique and see if I can reproduce some samples with R studio. Right now, most spheroid assays are checked with image J or a non-opensorece company software.</p>
+<p>I laid out a plan of steps and will go through the process step by step</p>
+<p>step 1 is for R studio to be able to draw the outline of the cells in an image. I plan to use the imager package for this and if necessary the magick package. (I would also like to automate this but this can wait till after step 2. )</p>
 <p>step 2 is for R studio to calculate the area of the of the cell (based on the given metadata aka: the zoom and starting size of the cells.)</p>
 <p>step 3 and last step is to R to able to this over every frame of a video/ be given a time to take an image. (if I say every 10 seconds or hour take the images)</p>
 <div id="step-1-outlining-data" class="section level2 hasAnchor" number="5.1">
@@ -283,18 +296,18 @@ div.csl-indent {
 <span id="cb45-6"><a href="looking-ahead.html#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
 <span id="cb45-7"><a href="looking-ahead.html#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_4_gray , <span class="at">main=</span><span class="st">&quot;Before&quot;</span>)</span>
 <span id="cb45-8"><a href="looking-ahead.html#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f , <span class="at">main=</span><span class="st">&quot;After trend removal&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>so now that we have a nice even picture we are going to determine the threshold.
 the threshol shows us what part of the picture stands out the most hard lines and blotches of darker colour stand out. how much much the threshold will depend on how high or low you set it. in the example we have set the threshold to 25 , 15 and 5 % and we can examine it with the original picture.</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="looking-ahead.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
 <span id="cb46-2"><a href="looking-ahead.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
 <span id="cb46-3"><a href="looking-ahead.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">15</span>,<span class="dv">5</span>),<span class="st">&quot;%&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">map_il</span>(<span class="sc">~</span> <span class="fu">threshold</span>(im_4.f,.)) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">layout=</span><span class="st">&quot;row&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-15-2.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-16-2.png" width="672" />
 5% is very low and you almost see noting of the lines, 25% gives a bit more detail than there is truly in the picture. 15% seems to be on the right track we are going to continue with that one and see if we can get a more detaild picture</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="looking-ahead.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>))</span>
 <span id="cb47-2"><a href="looking-ahead.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
 <span id="cb47-3"><a href="looking-ahead.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">15</span>,<span class="dv">13</span>),<span class="st">&quot;%&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">map_il</span>(<span class="sc">~</span> <span class="fu">threshold</span>(im_4.f,.)) <span class="sc">%&gt;%</span> <span class="fu">plot</span>(<span class="at">layout=</span><span class="st">&quot;row&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-16-2.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-17-2.png" width="672" />
 there are small differences in these pictures which concerns the small spots around the cell the closest we are going to get is probably the 17% one so we continue our analysis with that.
 We are going to save the 17% threshold into an new vector.
 Next we will convert this to a pixel set. we repeat the process of checking the threshold for every cell. it does not have to be perfect yet we can clean up in the next step</p>
@@ -311,7 +324,7 @@ Next we will convert this to a pixel set. we repeat the process of checking the 
 <span id="cb48-11"><a href="looking-ahead.html#cb48-11" aria-hidden="true" tabindex="-1"></a>px_4 <span class="ot">&lt;-</span> <span class="fu">as.pixset</span>(<span class="dv">1</span><span class="sc">-</span>im_4.t) <span class="co">#Convert to pixset</span></span>
 <span id="cb48-12"><a href="looking-ahead.html#cb48-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-13"><a href="looking-ahead.html#cb48-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_4)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 this is the result of the pixelset, the pixel set ecentially marks every pixel that was black in the threshold.
 now we can use the fill and clean command on this to clear of some of the pixels we don’t want and highlight the left over pixels.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="looking-ahead.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
@@ -333,7 +346,7 @@ now we can use the fill and clean command on this to clear of some of the pixels
 <span id="cb49-17"><a href="looking-ahead.html#cb49-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-18"><a href="looking-ahead.html#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(im_4.f)</span>
 <span id="cb49-19"><a href="looking-ahead.html#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_4,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">1.5</span>) <span class="sc">%&gt;%</span> highlight</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 here we can see the result of our plotting. its important that the complete cell is seround by the red border and that as many of the left over cells are included in that border. it is also important that it is disconnected from the discoloration in the bottom right.
 next we want to select the main body of our analysis we do this locating the middle of our image with the summarise function next we will put the outcome of this into the px.flood command this will select the whole white body that is part of the middle</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="looking-ahead.html#cb50-1" aria-hidden="true" tabindex="-1"></a>px_1 <span class="ot">&lt;-</span> <span class="fu">fill</span>(px_1,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">3</span>) </span>
@@ -354,13 +367,13 @@ next we want to select the main body of our analysis we do this locating the mid
 <span id="cb50-16"><a href="looking-ahead.html#cb50-16" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="looking-ahead.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_1)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="looking-ahead.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_2)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="looking-ahead.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_3)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-3.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-3.png" width="672" /></p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="looking-ahead.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(px_4)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-19-4.png" width="672" />
+<p><img src="_main_files/figure-html/unnamed-chunk-20-4.png" width="672" />
 now we have a pixel set with the outline of our cells.</p>
 </div>
 <div id="step-2-getting-the-pixel-area" class="section level2 hasAnchor" number="5.2">

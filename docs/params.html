@@ -146,7 +146,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="data/style.css" type="text/css" />
 </head>
 
 <body>
@@ -159,11 +159,15 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./"></a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
-<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a></li>
+<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#analysis-plan"><i class="fa fa-check"></i><b>2.1</b> analysis plan</a></li>
+<li class="chapter" data-level="2.2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#excecution"><i class="fa fa-check"></i><b>2.2</b> excecution</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="map-tree.html"><a href="map-tree.html"><i class="fa fa-check"></i><b>3</b> map tree</a></li>
 <li class="chapter" data-level="4" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html"><i class="fa fa-check"></i><b>4</b> The importance of reproducible data.</a>
 <ul>
@@ -175,7 +179,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="looking-ahead.html"><a href="looking-ahead.html#step-2-getting-the-pixel-area"><i class="fa fa-check"></i><b>5.2</b> Step 2 getting the pixel area</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
-<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a></li>
+<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#data-processing-and-dbeaver"><i class="fa fa-check"></i><b>7.1</b> data processing and DBeaver</a></li>
+<li class="chapter" data-level="7.2" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#results"><i class="fa fa-check"></i><b>7.2</b> results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
 <li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
@@ -203,21 +211,21 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 9</span> Params<a href="params.html#params" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter we are going to make a rmarkdown with some parameters
 after adding our params we have the next html file in this we will show the covid cases and deaths of croatia of august 2021</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="params.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make screenshot of parameterized Rmarkdown</span></span>
-<span id="cb97-2"><a href="params.html#cb97-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;data/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="params.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make screenshot of parameterized Rmarkdown</span></span>
+<span id="cb90-2"><a href="params.html#cb90-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;data/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <p>next we can render this rmarkdown in two ways
 with the first way we can render the new file by setting the params like so</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="params.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = list(country = &quot;Denmark&quot;, year = 2021, month = 8), output_file = &quot;denmark_8_2021&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="params.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = list(country = &quot;Denmark&quot;, year = 2021, month = 8), output_file = &quot;denmark_8_2021&quot;)</span></span></code></pre></div>
 <p>the second way is to replace the params with ask</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="params.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = &quot;ask&quot;, output_file = &quot;denmark_8_2021_params_ask&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="params.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = &quot;ask&quot;, output_file = &quot;denmark_8_2021_params_ask&quot;)</span></span></code></pre></div>
 <p>this will open a webpage with sliders and a list of country’s</p>
 <div class="figure">
 <img src="data/voorbeeld_params.PNG" alt="" />
 <p class="caption">example of the slider</p>
 </div>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="params.html#cb100-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;data/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" />
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="params.html#cb93-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;data/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 after looking at the graphs in the new markdown you can see the data has changed arcorindgly to the given params</p>
 
 </div>

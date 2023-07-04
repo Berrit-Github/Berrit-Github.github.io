@@ -146,7 +146,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="data/style.css" type="text/css" />
 </head>
 
 <body>
@@ -159,11 +159,15 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./"></a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
-<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a></li>
+<li class="chapter" data-level="2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html"><i class="fa fa-check"></i><b>2</b> IC50 C.elegans experiment workflow</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#analysis-plan"><i class="fa fa-check"></i><b>2.1</b> analysis plan</a></li>
+<li class="chapter" data-level="2.2" data-path="ic50-c.elegans-experiment-workflow.html"><a href="ic50-c.elegans-experiment-workflow.html#excecution"><i class="fa fa-check"></i><b>2.2</b> excecution</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="map-tree.html"><a href="map-tree.html"><i class="fa fa-check"></i><b>3</b> map tree</a></li>
 <li class="chapter" data-level="4" data-path="the-importance-of-reproducible-data..html"><a href="the-importance-of-reproducible-data..html"><i class="fa fa-check"></i><b>4</b> The importance of reproducible data.</a>
 <ul>
@@ -175,7 +179,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="looking-ahead.html"><a href="looking-ahead.html#step-2-getting-the-pixel-area"><i class="fa fa-check"></i><b>5.2</b> Step 2 getting the pixel area</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="cv.html"><a href="cv.html"><i class="fa fa-check"></i><b>6</b> CV</a></li>
-<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a></li>
+<li class="chapter" data-level="7" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html"><i class="fa fa-check"></i><b>7</b> connecting and using an external database</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#data-processing-and-dbeaver"><i class="fa fa-check"></i><b>7.1</b> data processing and DBeaver</a></li>
+<li class="chapter" data-level="7.2" data-path="connecting-and-using-an-external-database.html"><a href="connecting-and-using-an-external-database.html#results"><i class="fa fa-check"></i><b>7.2</b> results</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
 <li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
@@ -203,79 +211,43 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 3</span> map tree<a href="map-tree.html#map-tree" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="map-tree.html#cb12-1" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_tree</span>(<span class="st">&quot;data/daur2_tidy_data&quot;</span>)</span></code></pre></div>
 <pre><code>## data/daur2_tidy_data
-## ├── metagenomics_species_identification
-## │   ├── metagenomics_excersises
-## │   │   ├── analysis
-## │   │   │   └── Metagenomics_exercise.Rmd
-## │   │   └── data
-## │   │       ├── bracken
-## │   │       │   ├── mock1.bracken
-## │   │       │   └── mock1_bracken_species.biom
-## │   │       ├── fastqc
-## │   │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.html
-## │   │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.zip
-## │   │       │   ├── HU1_MOCK1_L001_R2_001_fastqc.html
-## │   │       │   ├── HU1_MOCK1_L001_R2_001_fastqc.zip
-## │   │       │   └── README
-## │   │       ├── fastQC_quality_images
-## │   │       │   ├── quality_HU1_MOCK1_L001_R1_001.png
-## │   │       │   ├── quality_HU1_MOCK1_L001_R2_001.png
-## │   │       │   └── README
-## │   │       └── kraken2
-## │   │           ├── mock1.report
-## │   │           └── mock1_bracken_species.report
-## │   ├── metagenomics_formatieve_opdracht
-## │   │   ├── analysis
-## │   │   │   └── formatieve_opdracht.Rmd
-## │   │   └── data
-## │   │       ├── fastQC_files
-## │   │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.html
-## │   │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.zip
-## │   │       │   ├── HU2_MOCK2_L001_R2_001_fastqc.html
-## │   │       │   ├── HU2_MOCK2_L001_R2_001_fastqc.zip
-## │   │       │   └── README
-## │   │       └── fastQC_quality_pictures
-## │   │           ├── HU2_MOCK2_L001_R1_001.png
-## │   │           ├── HU2_MOCK2_L001_R2_001.png
-## │   │           └── README
-## │   └── setup_metafile
-## │       └── setup_meta_env.yml
-## └── RNA_sequencing
-##     ├── airflow_practice_excercise
-##     │   ├── downloadfastq_command.sh
-##     │   ├── fastq_files
-##     │   ├── les2.Rproj
-##     │   ├── les2R.R
-##     │   ├── les3.Rproj
-##     │   ├── les3R.R
-##     │   └── les4R.R
-##     ├── iPSC_formatieve_opdracht
-##     │   ├── analyse
-##     │   │   └── iPSC_assesment_BerritKievith.Rmd
-##     │   ├── figures
-##     │   │   ├── airway_summary.PNG
-##     │   │   └── README
-##     │   ├── iPSC.Rproj
-##     │   └── suporting_infromation
-##     │       ├── airway_data.R
-##     │       ├── iPSC_notes.R
+## └── metagenomics_species_identification
+##     ├── metagenomics_excersises
+##     │   ├── analysis
+##     │   │   └── Metagenomics_exercise.Rmd
+##     │   └── reports
+##     │       ├── quality_images
+##     │       │   ├── quality_HU1_MOCK1_L001_R1_001.png
+##     │       │   ├── quality_HU1_MOCK1_L001_R2_001.png
+##     │       │   └── README
+##     │       ├── README
+##     │       ├── stap_1_fastqc_files
+##     │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.html
+##     │       │   ├── HU1_MOCK1_L001_R1_001_fastqc.zip
+##     │       │   ├── HU1_MOCK1_L001_R2_001_fastqc.html
+##     │       │   └── HU1_MOCK1_L001_R2_001_fastqc.zip
+##     │       ├── stap_2_bracken_files
+##     │       │   ├── mock1.bracken
+##     │       │   └── mock1_bracken_species.biom
+##     │       └── stap_3_kraken2_files
+##     │           ├── mock1.report
+##     │           └── mock1_bracken_species.report
+##     ├── metagenomics_formatieve_opdracht
+##     │   ├── analysis
+##     │   │   └── formatieve_opdracht.Rmd
+##     │   └── reports
+##     │       ├── fastQC_files
+##     │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.html
+##     │       │   ├── HU2_MOCK2_L001_R1_001_fastqc.zip
+##     │       │   ├── HU2_MOCK2_L001_R2_001_fastqc.html
+##     │       │   └── HU2_MOCK2_L001_R2_001_fastqc.zip
+##     │       ├── fastQC_quality_pictures
+##     │       │   ├── HU2_MOCK2_L001_R1_001.png
+##     │       │   └── HU2_MOCK2_L001_R2_001.png
 ##     │       └── README
-##     └── OneCut_eindopdracht
-##         ├── analysis
-##         │   └── eindopdracht_Onecut.Rmd
-##         ├── count_tabel
-##         ├── eindopdracht.Rproj
-##         └── fastQC_quality_images
-##             ├── quality_seq_SRR7866699_1.png
-##             ├── quality_SRR7866699_1.png
-##             ├── quality_SRR7866699_2.png
-##             ├── quality_SRR7866700_1.png
-##             ├── quality_SRR7866700_2.png
-##             ├── quality_SRR7866703_1.png
-##             ├── quality_SRR7866703_2.png
-##             ├── quality_SRR7866704_1.png
-##             ├── quality_SRR7866704_2.png
-##             └── README</code></pre>
+##     └── setup_metafile
+##         ├── README
+##         └── setup_meta_env.yml</code></pre>
 
 </div>
             </section>
