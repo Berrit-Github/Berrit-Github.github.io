@@ -8,7 +8,19 @@ C.elegans plate experiment
 
 Data for this experiment was provided by J.Louter (INT/ILC). In the experiment adult C.elegans nematodes were incubated by different concentration of different chemicals. after the incubation the amount of offspring was counted. Ethanol was used as a positive control and S-medium as the negative control.
 
-For a full IC50 analysis the averages of the compounds should be merged. this can be plotted out in a line graph. then at the middle between the lowest and highest point on that spot on the X-axis is the IC50. after doing this for all the chemicals they can be compared.
+## analysis plan
+
+For a full IC50
+1. firstly the data should be checked for outlines 
+2. Next we take the averages of each compound by different concentrations 
+2. these results can be plotted out in to a graph with lines. 
+3. we check what the highest and the lowest point is of the measurements and calculate the middle between these points.
+4. Than we check the graph where this measurement is reached and what the concentration is of the compound.
+5. with these results the concentrations can be compared.
+
+## excecution
+
+For this analysis we going t work through the first 2 steps to show of how this works in R
 
 first we open and save the data file to our R console.
 ```{r Open the file in R, using the readxl package, message=FALSE}
@@ -62,7 +74,7 @@ onderzoek_data_portfolie_1_newraw <- onderzoek_data_portfolie_1
 
 onderzoek_data_portfolie_1_newraw$RawData <- onderzoek_data_portfolie_1_newraw$RawData/mean(ngative_stuff$RawData)
 
-ggplot(onderzoek_data_portfolie_1_newraw, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2) 
+ggplot(onderzoek_data_portfolie_1_newraw, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1)+ geom_smooth(se = FALSE) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2) 
 
 
 ```

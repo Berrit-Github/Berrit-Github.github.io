@@ -6,15 +6,24 @@ date: "2023-05-26"
 
 # Looking ahead
 
-for this chapter we will be looking two years into the future and where I expect to be at that time.
+for this chapter we will be looking two years into the future and where I expect to be at that time. In addition I will also make a plan and execute it for a skill I think is handy to have in these future job ideas
 
-firstly I am not jet sure if I want to work or do a master after I graduate from the HU. So I could be either working had at a laboratory somewhere, it is important for me however that my work has a certain use for people. or I could be studding on my masters.
+firstly I am not yet sure if I want to work or do a master after I graduate from the HU. 
+On one side I have already have a lot of experience working because I did multiple internships. I enjoyed most of the work I did and with what I learned during my bachelor I feel like I could do some really good work out there.
 
-as of right now I'm in my third year and still need to do an one year internship in Norway. for this Internship I will be working with spheroid assays. To familiarize myself with this assay i am going to design a process with which i can analyse these assays.
+On the other side I do enjoy studying a whole lot as long as I find the subject interesting. I also don't want to regret later that if I could have studied more.
 
-for this project i am going to analyse some images from a spheroid assay and see if i can use R to contour the spheroid and give me the area it has grown over time. 
+Overall I think I would be happy with both, I think the most important part about studying or working is to find satisfaction and meaning in what I do. 
 
-step 1 is for R studio to be able to draw the outline of the cells in an image. I plan to use the imager package for this and if necessary the magick package. I would also like to automate this but this can wait till after step 2. 
+Still i want to show how I going about learning a new skill so I will look into what is happening in the upcoming year.
+
+As of right now I'm in my third year and still need to do an one year internship in Norway. The lab I will be working at does research into matrix biology. Specifically looking at an intergrin called alpha11beta1. This intergrin is present on normal fibroblasts and carcinoma-associated fibroblasts. Because it is not completely know how this protein works and what effects of it are during cancer development we research it.
+
+For this Internship I will be working with spheroid assays. This assay shows the growth of a small clump of tumor cells (the spheroid) over multiple hours and/or days. I want to familiarize myself with the technique and see if I can reproduce some samples with R studio. Right now, most spheroid assays are checked with image J or a non-opensorece company software.
+
+I laid out a plan of steps and will go through the process step by step
+
+step 1 is for R studio to be able to draw the outline of the cells in an image. I plan to use the imager package for this and if necessary the magick package. (I would also like to automate this but this can wait till after step 2. )
 
 step 2 is for R studio to calculate the area of the of the cell (based on the given metadata aka: the zoom and starting size of the cells.) 
 

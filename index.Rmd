@@ -3,6 +3,7 @@ title: "Personal Portfolio"
 author: "Berrit Kievith"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+css: "data/style.css"
 documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -25,4 +26,11 @@ bookdown::render_book()
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
+```
+
+
+```{css echo = FALSE}
+body{
+background-color: grey;
+}
 ```

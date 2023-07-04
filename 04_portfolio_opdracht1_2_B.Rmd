@@ -16,7 +16,6 @@ I would give this code a 4.4 its overall very good I would separate a few of the
 
 Next we are going to run the code and try to recreate the following picture
 
-(FILL IN EXAMPLE PICTURE)
 
 ![Voorbeeld figuur](data/osfstorage-archive/Voorbeeld_afbeelding.PNG)
 

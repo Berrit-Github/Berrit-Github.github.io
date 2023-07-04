@@ -8,6 +8,6 @@ date: "2023-06-06"
 
 I have made a package with wich IC50 data can easily be plotted it can be downloaded here
 ```{r}
-devtools::install_github("Berrit-Github/easyIC50plotting")
+#devtools::install_github("Berrit-Github/easyIC50plotting")
 ```
 
