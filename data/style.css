@@ -1,0 +1,53 @@
+
+
+body {
+  background-color: #F1F1F1 !important;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  color: #F1F1F1 !important;
+  
+}
+
+.book .book-summary {
+  background-color: #F1F1F1  !important;
+  color: #F1F1F1  !important;
+}
+
+.book.with-summary .book-header.fixed {
+     background-color: #F1F1F1 !important;
+     color: #F1F1F1 !important;
+}
+
+li {
+  font-weight: bold;
+  background-color: #F1F1F1 !important;
+  color: #F1F1F1 !important;
+}
+
+.book.with-summary .book-body {
+     background-color: #F1F1F1 !important;
+     color: #F1F1F1 !important;
+}
+
+sidebar {
+  background-color: #F1F1F1 !important;
+  color: #F1F1F1 !important; 
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #75A1B6 ;
+}
+
+.bordershere {
+border-style: solid;
+border-width: 5px;
+border-color: purple;
+}
+
+
+
+
