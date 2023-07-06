@@ -3,6 +3,8 @@ title: "portfolio_assignment_1_1"
 output: html_document
 date: "2023-04-17"
 ---
+<body>
+
 # IC50 C.elegans experiment workflow
 C.elegans plate experiment
 
@@ -52,7 +54,8 @@ Next we are going to plot the data. we want the component concentration on the X
 
 ```{r, warning=FALSE}
 library(ggplot2)
-ggplot(onderzoek_data_portfolie_1, aes(x = compConcentration , y = RawData, colour = compName , shape = expType )) + geom_point() + labs(x = "component concentration (nM)" , y = "number of offspring" )
+library(viridis)
+ggplot(onderzoek_data_portfolie_1, aes(x = compConcentration , y = RawData, colour = compName , shape = expType )) + geom_point() + labs(x = "component concentration (nM)" , y = "number of offspring" ) + theme_dark() + scale_color_viridis(discrete=TRUE)
 
 ```
 
@@ -60,7 +63,7 @@ hmmm.. that does not tell us a whole lot about the data now does it. lets add a 
 
 ```{r, warning=FALSE}
 library(ggplot2)
-ggplot(onderzoek_data_portfolie_1, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2)
+ggplot(onderzoek_data_portfolie_1, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2) +  theme_dark() + scale_color_viridis(discrete=TRUE)
 ```
 
 To really understand the effects of each component we are going to normalize the data. first we make the mean value of the negative control equal to one. then we will convert the other data to be a fraction of the negative control. we make a new vector with the new data and plot this like we did before.
@@ -73,8 +76,7 @@ mean(ngative_stuff$RawData)
 onderzoek_data_portfolie_1_newraw <- onderzoek_data_portfolie_1
 
 onderzoek_data_portfolie_1_newraw$RawData <- onderzoek_data_portfolie_1_newraw$RawData/mean(ngative_stuff$RawData)
-
-ggplot(onderzoek_data_portfolie_1_newraw, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1)+ geom_smooth(se = FALSE) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2) 
+ggplot(onderzoek_data_portfolie_1_newraw, aes(x = log10(compConcentration) , y = RawData, colour = compName , shape = expType )) + geom_jitter(width = 0.1)+ geom_smooth(se = FALSE) + labs(x = "component concentration on log10 scale (nM)" , y = "number of offspring" ) + xlim(-4.5 , 2) + theme_dark() + scale_color_viridis(discrete=TRUE)
 
 
 ```
@@ -86,3 +88,4 @@ ggplot(onderzoek_data_portfolie_1_newraw, aes(x = log10(compConcentration) , y =
 
 
 
+</body>

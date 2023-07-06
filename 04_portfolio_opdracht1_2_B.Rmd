@@ -3,6 +3,8 @@ title: "reproducing papers"
 output: html_document
 date: "2023-05-22"
 ---
+<body>
+
 ## the second part of data
 ```{r , include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -21,7 +23,7 @@ Next we are going to run the code and try to recreate the following picture
 
 remaking this was not super difficult in the main_manuscript file they gave all the packages needed to run the code as well as the seed they used.
 
-```{r}
+```{r message=TRUE, warning=TRUE}
 #the packages needed to run the code
 
 library(patchwork)
@@ -318,3 +320,4 @@ This data was easy to run the addition of the used packages made running this co
 
 
 
+</body>

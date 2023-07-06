@@ -1,5 +1,5 @@
 --- 
-title: "Personal Portfolio"
+title: "personal Portfolio"
 author: "Berrit Kievith"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -34,3 +34,5 @@ body{
 background-color: grey;
 }
 ```
+
+
