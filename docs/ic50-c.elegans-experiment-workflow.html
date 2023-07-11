@@ -145,7 +145,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="data/style.css" type="text/css" />
+<link rel="stylesheet" href="bookdown_settings/style.css" type="text/css" />
 </head>
 
 <body>
@@ -185,7 +185,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
-<li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
+<li class="chapter" data-level="10" data-path="nutricia-project.html"><a href="nutricia-project.html"><i class="fa fa-check"></i><b>10</b> Nutricia project</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="nutricia-project.html"><a href="nutricia-project.html#introduction-project"><i class="fa fa-check"></i><b>10.1</b> introduction project</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -227,7 +230,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="ic50-c.elegans-experiment-workflow.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb2-2"><a href="ic50-c.elegans-experiment-workflow.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-3"><a href="ic50-c.elegans-experiment-workflow.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="ic50-c.elegans-experiment-workflow.html#cb2-4" aria-hidden="true" tabindex="-1"></a>onderzoek_data_portfolie_1 <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;data/CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>)</span></code></pre></div>
+<span id="cb2-4"><a href="ic50-c.elegans-experiment-workflow.html#cb2-4" aria-hidden="true" tabindex="-1"></a>onderzoek_data_portfolie_1 <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;bookdown_gallary/data/CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>)</span></code></pre></div>
 <p>now that we imported the data we can check if the data types are rightfully interpreted. by using the head command we can see the first 10 rows and the column names and their assigned types.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ic50-c.elegans-experiment-workflow.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(onderzoek_data_portfolie_1)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 34
@@ -275,11 +278,11 @@ before we can work with the data we are going to change these to the right data 
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="ic50-c.elegans-experiment-workflow.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="ic50-c.elegans-experiment-workflow.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code></pre></div>
 <pre><code>## Loading required package: viridisLite</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ic50-c.elegans-experiment-workflow.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="ic50-c.elegans-experiment-workflow.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">Title =</span> <span class="st">&quot;componenent toxicity based on reproduction&quot;</span> , <span class="at">x =</span> <span class="st">&quot;component concentration (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>hmmm.. that does not tell us a whole lot about the data now does it. lets add a log10 transformation to the X-axis to even it out more. next we are going to add some jitter to points just to see the individual points better.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="ic50-c.elegans-experiment-workflow.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-2"><a href="ic50-c.elegans-experiment-workflow.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) <span class="sc">+</span>  <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb10-2"><a href="ic50-c.elegans-experiment-workflow.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span> <span class="fu">labs</span>( <span class="at">Title =</span> <span class="st">&quot;componenent toxicity based on reproduction&quot;</span> ,<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) <span class="sc">+</span>  <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>To really understand the effects of each component we are going to normalize the data. first we make the mean value of the negative control equal to one. then we will convert the other data to be a fraction of the negative control. we make a new vector with the new data and plot this like we did before.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="ic50-c.elegans-experiment-workflow.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view(onderzoek_data_portfolie_1)</span></span>
@@ -290,7 +293,7 @@ before we can work with the data we are going to change these to the right data 
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ic50-c.elegans-experiment-workflow.html#cb13-1" aria-hidden="true" tabindex="-1"></a>onderzoek_data_portfolie_1_newraw <span class="ot">&lt;-</span> onderzoek_data_portfolie_1</span>
 <span id="cb13-2"><a href="ic50-c.elegans-experiment-workflow.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="ic50-c.elegans-experiment-workflow.html#cb13-3" aria-hidden="true" tabindex="-1"></a>onderzoek_data_portfolie_1_newraw<span class="sc">$</span>RawData <span class="ot">&lt;-</span> onderzoek_data_portfolie_1_newraw<span class="sc">$</span>RawData<span class="sc">/</span><span class="fu">mean</span>(ngative_stuff<span class="sc">$</span>RawData)</span>
-<span id="cb13-4"><a href="ic50-c.elegans-experiment-workflow.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1_newraw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb13-4"><a href="ic50-c.elegans-experiment-workflow.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(onderzoek_data_portfolie_1_newraw, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(compConcentration) , <span class="at">y =</span> RawData, <span class="at">colour =</span> compName , <span class="at">shape =</span> expType )) <span class="sc">+</span> <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">Title =</span> <span class="st">&quot;componenent toxicity based on reproduction&quot;</span> , <span class="at">x =</span> <span class="st">&quot;component concentration on log10 scale (nM)&quot;</span> , <span class="at">y =</span> <span class="st">&quot;number of offspring&quot;</span> ) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">4.5</span> , <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_dark</span>() <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </body>
 
@@ -333,7 +336,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01_portfolio_opd_1.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/files_for_bookdown/01_portfolio_opd_1.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -351,8 +354,7 @@ gitbook.start({
 },
 "toc": {
 "collapse": "section"
-},
-"split_bib": false
+}
 });
 });
 </script>
