@@ -1,6 +1,7 @@
 bookdown::gitbook:
-  css: "data/style.css"
+  css: "bookdown_settings/style.css"
   highlight: "tango"
+  split_bib: no
   config:
     toc:
       collapse: "section"
@@ -10,6 +11,5 @@ bookdown::gitbook:
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf", "epub"]
-    split_bib: no
 
 
