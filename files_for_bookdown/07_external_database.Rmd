@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "personal Portfolio"
 output: html_document
 css: "data/style.css"
 date: "2023-05-12"
@@ -11,7 +11,7 @@ For this chapter we use the gapminder data of the dslabs package and the data fr
 
 ## data processing and DBeaver
 
-The data for this report was downloaded from (google?) and the gapminder from the dslabs package in R.
+The data for this report was downloaded from the private data-scienceILC github page and the gapminder from the dslabs package in R.
 The data was downloaded into Rsudio and checked.
 the data was changed so it was compatible between the different dataframes
 
@@ -134,46 +134,40 @@ ON
 ```
 ```{r , include=FALSE}
 all_data <- read.csv("bookdown_gallary/data/all_data.csv")
+all_data <- as.data.frame(all_data)
+sum_data <- filter(all_data , year == 2013)
 ```
-
-## results
-
-The average amount of flu searches in 2013 was `r round(summary(filter(all_data, year == 2013 )$flu_searches)[4], digits = 2)` 
-
-the amount of dengue searches in the same year was `r round(summary(filter(all_data, year == 2013 )$dengue_searches)[4], digits = 2)`
-
-
-To see which countries searched flue the most
-first it would be interesting to see which country searches flu and dengue the most to make this more even we will be looking at the amount of searches per 100 citizens the dengue searches were lower and we need look for searches per 1.000.000 citizens. 
-
 ```{r name, eval=FALSE, }
 all_data <- dbReadTable(con, "all_data")
-unique(all_data$year)
 ```
+## Flu Analysis
 
+The flu is one of the most common infection worldwide. in the year 2013 flu was searched`r summary(sum_data$flu_searches)[6]` times and this has been increasing with every year. Coincidentally With the years more and more people gain access to the internet and more technology. In this report there we will see if there is a connection between these two. We do this by summing up access to technology with the gdp of the country.
+
+First we are going to look where the flu searches are the highest relevant to the population
 ```{r}
-library(viridis)
 all_data_2 <- all_data[, c(1:7, 10 , 11)]
-all_data_2 <- pivot_longer(all_data_2, cols = -c(country , year), values_to = "values" , names_to = "variable")
+library(viridis)
 
-filter(all_data , flu_searches > 0) %>% filter(country == "Austria" | country == "Bulgaria" | country == "Canada") %>% ggplot( aes(x = year , y = (flu_searches/population)*1000 , group = country , colour = country, label = country)) +geom_point() + geom_line() + labs(y = "amount of flu searches per 1000") + theme_dark() + scale_color_viridis(discrete=TRUE)
-
+filter(all_data , flu_searches > 0 & gdp > 0) %>% ggplot( aes(x = region , y = (flu_searches/population)*100, group = country , fill = region)) + geom_col() + labs(y = "amount of flu_serches") + theme(axis.text.x=element_text(angle = 45, hjust = 0.75)) + labs(title = "flu searches per continent" , y = "flu searches per continent (divided for population)") + theme_dark() + scale_color_viridis(discrete=TRUE) + theme(axis.text.x = element_text(angle = 65 , hjust = 1))
 ```
-Austria searched flu the most
+
+The most Searches where in North and South America and west and east Europe. from these regions we are going to determine which searched for flu the most.
 ```{r}
+filter(all_data , flu_searches > 0) %>% filter(region == "Western Europe" | region == "Eastern Erope" | region == "South America" | region == "Northern America") %>% ggplot( aes(x = year , y = (flu_searches/population)*1000 , group = country , colour = country, shape = country ,label = country)) +geom_point() + geom_line() + labs(title = "flu searches per country per 1:1000",y = "amount of flu searches per 1000") + theme_dark() + scale_color_viridis(discrete=TRUE)
 
-filter(all_data , dengue_searches > 0) %>% ggplot( aes(x = year , y = (dengue_searches/population)*10000000, group = country , colour = country)) +geom_point() + geom_line() + labs(y = "amount of dengue searches per 10.000.000") + theme_dark() + scale_color_viridis(discrete=TRUE)
 ```
 
-
-Singappore searches dengue the most
-
+Austria Canada and Paraguay searched flu the most with this now we add a graph to see if there is a connection between gdp and the amount of searches
 ```{r}
+filter(all_data , flu_searches > 0 & gdp >0) %>% filter(region == "Western Europe" | region == "Eastern Erope" | region == "South America" | region == "Northern America") %>% ggplot( aes(x = country , y = gdp , group = country , fill = country, label = country)) +geom_col() + labs(title = "gdp per country" , y = "gdp") + theme_dark() + scale_color_viridis(discrete=TRUE) + theme(axis.text.x = element_text(angle = 65 , hjust = 1))
 
-filter(all_data , flu_searches > 0 & gdp > 0) %>% ggplot( aes(x = region , y = (flu_searches/population)*100, group = country , fill = region)) + geom_col() + labs(y = "amount of flu_serches") + theme(axis.text.x=element_text(angle = 45, hjust = 0.75)) + labs(title = "flu searches per continent" , y = "flu searches per continent (divided for population)") + theme_dark() + scale_color_viridis(discrete=TRUE)
 ```
+Germany, France and Brazil have the highest amount of gdp followed by Canada and The Netherlands.
 
-flu was mostly searched in Europa and america
+## conclusion
 
-
+The country's with the highest flu searches were Austria, Canada and Paraguay. The country's with the highest gdp were Germany, France and Brazil.
+Based on these findings there is no connection between having a high gdp and more flu searches.
+what does needs to be considered is that this research did not include all the country's and no statistic testing. These factors can be accounted for in a next research.
 

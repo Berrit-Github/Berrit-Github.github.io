@@ -1,13 +1,13 @@
-Welcome! 
+Welcome to my personal portfolio.
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+In this Repo You can find the files for my personal portfolio.
+Summary:
+* Bookdown_gallery: this contains all the necessary info need to build my bookdown site
+* Bookdown_settings: This contains all the setting files such as Css and other files needed to build the bookdown.
+* files_for_bookdown: this directory has all the Rmd files that appear in the bookdown.
+* docs : contains the bookdown HTML files
 
-This template provides a skeleton file structure that you can edit to create your book. 
-
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
 
 Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
 
 The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown

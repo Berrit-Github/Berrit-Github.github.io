@@ -1,0 +1,8 @@
+
+Data: contains data files for bookdown.
+Daur2_tidy_data: all the files in here are ordered for the map tree Rmd
+images contain all the pictures needed for the bookdown.
+Reports: contains all the reports needed for bookdown
+vrij_opdracht: all the images from the looking_ahead.Rmd are loaded from here end saved to this directory
+references: contains the files with references used in the bookdown
+

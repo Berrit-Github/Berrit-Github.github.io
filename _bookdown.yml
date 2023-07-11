@@ -1,5 +1,6 @@
 delete_merged_file: true
 output_dir: "docs"
+rmd_files: "index.Rmd"
 rmd_subdir: ["files_for_bookdown"]
 language:
   ui:

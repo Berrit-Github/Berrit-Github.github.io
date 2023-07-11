@@ -1,24 +1,22 @@
 --- 
-title: "personal Portfolio"
+title: "Personal Portfolio"
 author: "Berrit Kievith"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 css: "data/style.css"
 documentclass: book
 bibliography: ["bookdown_settings/book.bib", "bookdown_settings_packages.bib"]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
 link-citations: yes
 split_bib: no
 ---
-
 # Welcome
 
 welcome to my bookdown website. 
-This website contains my portfolio excercises and my cv.
-you can look throuh the pages with the search bar on the right
+This website contains my portfolio and my cv.
+Within the different pages I will show my skills with data science and Rmarkdown
 
-```{r, eval=FALSE}
+you can look through the pages with the search bar on the right.
+```{r eval=FALSE, include=FALSE}
 bookdown::render_book()
 ```
 
