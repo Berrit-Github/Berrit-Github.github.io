@@ -1,0 +1,23 @@
+---
+title: "Personal Portfolio Berrit Kievith"
+output: html_document
+date: "2023-05-08"
+---
+
+# repository mapping
+
+An important skill to have when using code and github is making a structured mapping system. 
+For a working structure there are a few rules to help.
+
+* dived the work into projects.
+
+* add a README to all the files which explains what the file contains and how it should be looked ad.
+
+* separate, data, reports, the raw_data and the final analysis etc. so each can easily be found and looked at.
+
+underneath Is an example of my own made mapping structure
+
+```{r}
+fs::dir_tree("bookdown_gallary/daur2_tidy_data")
+```
+

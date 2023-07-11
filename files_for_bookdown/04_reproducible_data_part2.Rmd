@@ -5,7 +5,7 @@ date: "2023-05-22"
 ---
 <body>
 
-## the second part of data
+## Reproducing data example
 ```{r , include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -19,11 +19,11 @@ I would give this code a 4.4 its overall very good I would separate a few of the
 Next we are going to run the code and try to recreate the following picture
 
 
-![Voorbeeld figuur](bookdown_dallary/images/Voorbeeld_afbeelding.PNG)
+![Example figure](bookdown_gallary/images/Voorbeeld_afbeelding.PNG)
 
 remaking this was not super difficult in the main_manuscript file they gave all the packages needed to run the code as well as the seed they used.
 
-```{r message=TRUE, warning=TRUE}
+```{r message=FALSE, warning=FALSE}
 #the packages needed to run the code
 
 library(patchwork)

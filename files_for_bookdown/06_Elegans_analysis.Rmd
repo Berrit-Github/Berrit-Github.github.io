@@ -13,11 +13,17 @@ Data for this experiment was provided by J.Louter (INT/ILC). In the experiment a
 ## analysis plan
 
 For a full IC50
+
 1. firstly the data should be checked for outlines 
+
 2. Next we take the averages of each compound by different concentrations 
+
 2. these results can be plotted out in to a graph with lines. 
+
 3. we check what the highest and the lowest point is of the measurements and calculate the middle between these points.
+
 4. Than we check the graph where this measurement is reached and what the concentration is of the compound.
+
 5. with these results the concentrations can be compared.
 
 ## excecution
