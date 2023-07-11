@@ -1,0 +1,374 @@
+---
+title: "Metaggenomics"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{bash update conda, echo=TRUE, eval=FALSE}
+# update conda and answer y to proceed question
+echo “y” | conda update -n base conda
+
+```
+
+
+```{bash make enivorment , engine.opts='-i', echo=TRUE, eval=FALSE}
+# show all conda virtual environments
+conda env list
+
+# show yml file content
+cat /home/berrit.kievith/daur2/metagenomics_species_identification/setup_meta_env.yml
+
+```
+
+```{bash create file, engine.opts='-i', echo=TRUE, eval=FALSE}
+# create conda virtual environment
+conda env create --file /home/berrit.kievith/daur2/metagenomics_species_identification/setup_meta_env.yml
+```
+
+
+
+```{bash instal fastQ, engine.opts='-i', echo=TRUE, eval=TRUE}
+# activate environment
+conda activate meta
+
+# install fastqc and answer yes for procceed question
+echo "y" | conda install -c bioconda fastqc
+
+# deactivate conda virtual environment
+conda deactivate
+
+```
+
+```{bash perform fstQC analyse, engine.opts='-i', echo=TRUE, eval=FALSE}
+# activate environment
+conda activate meta
+
+# perform FastQC analysis (change first path to your own folder structure if needed)
+fastqc -o /home/berrit.kievith/daur2/metagenomics_species_identification/fastqc/ /home/daur2/metagenomics/reader_data/HU1_MOCK1_L001_R1_001.fastq.gz
+
+fastqc -o /home/berrit.kievith/daur2/metagenomics_species_identification/fastqc/ /home/daur2/metagenomics/reader_data//HU1_MOCK1_L001_R2_001.fastq.gz
+
+
+# deactivate conda virtual environment
+conda deactivate
+
+```
+
+
+```{r picture paste, echo=FALSE, fig.height=3, out.width= '100%', fig.cap="Fig. 1: Quality distribution: Right-side) Foward read quality scores range from 0 to 40 on the Phred scale. All bases for all reads have very high quality (>30), indicating that our reads have an accuracy of >99,9%. Left-side)" }
+
+library(png)
+library(grid)
+library(gridExtra)
+
+img1 <-  rasterGrob(as.raster(readPNG("quality_HU1_MOCK1_L001_R1_001.png")))
+img2 <-  rasterGrob(as.raster(readPNG("quality_HU1_MOCK1_L001_R2_001.png")))
+grid.arrange(img1, img2, ncol=2, top=textGrob("Per base quality distribution of forward (right) and reverse (left) reads", gp=gpar(fontsize=10,font=8)))
+
+```
+
+```{bash install kraken2, engine.opts='-i', echo=TRUE, eval=FALSE}
+# activate environment
+conda activate meta
+
+#install kraken2 and answer y to proceed question
+echo "y" | conda install -c bioconda kraken2
+
+
+kraken2 --help
+
+
+conda deactivate
+```
+
+
+
+```{bash kraken2, engine.opts='-i', echo=TRUE, eval=FALSE}
+conda activate meta
+
+kraken2 --db /home/daur2/metagenomics/minikraken2_v2_8GB_201904_UPDATE/ --threads 2 --paired --gzip-compressed --output /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1.kraken --report /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1.report --use-names /home/daur2/metagenomics/reader_data/HU1_MOCK1_L001_R1_001.fastq.gz /home/daur2/metagenomics/reader_data/HU1_MOCK1_L001_R2_001.fastq.gz
+
+conda deactivate
+
+```
+
+
+
+
+```{bash bracken, engine.opts='-i', echo=TRUE, eval=FALSE}
+# activate environment
+conda activate meta
+
+echo "y" | conda install -c bioconda bracken
+
+conda deactivate
+
+
+```
+
+```{bash create bracken, engine.opts='-i', echo=TRUE, eval=FALSE}
+# activate environment
+conda activate meta
+
+bracken -d /home/daur2/metagenomics/minikraken2_v2_8GB_201904_UPDATE/ -i /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1.report -o /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1.bracken
+
+conda deactivate
+```
+
+
+```{bash krakenbiom downloaden, engine.opts='-i', echo=TRUE, eval=FALSE}
+# activate environment
+conda activate meta
+
+# install kraken-biom version 1.0.1 and answer y to proceed question
+echo "y" | conda install -c bioconda kraken-biom==1.0.1
+
+conda deactivate
+```
+
+
+
+```{bash try 2, engine.opts='-i', echo=TRUE, eval=FALSE}
+
+# activate environment
+conda activate meta
+
+kraken-biom /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1_bracken_species.report --fmt json -o /home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1_bracken_species.biom
+
+conda deactivate
+
+```
+
+
+```{r iinstalling things, eval=TRUE}
+# install phyloseq package
+BiocManager::install("phyloseq")
+# load nessecary packages 
+library("phyloseq")
+library("ggplot2")
+
+```
+
+```{r importen van de biom data}
+
+data <- "/home/berrit.kievith/daur2/metagenomics_species_identification/kraken2/mock1/mock1_bracken_species.biom"
+
+merged_metagenomes <- import_biom(data)
+
+#View(merged_metagenomes@tax_table@.Data)
+
+```
+
+```{r data net maken}
+# remove taxonomy information from values/ remove first four characters
+merged_metagenomes@tax_table@.Data <-
+  substring(merged_metagenomes@tax_table@.Data, 4)
+
+# rename column header to informative format
+colnames(merged_metagenomes@tax_table@.Data) <- 
+  c("Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+
+# inspect data format
+#View(merged_metagenomes@tax_table@.Data)
+
+```
+
+```{r}
+merged_metagenomes_b <- subset_taxa(merged_metagenomes, Kingdom == "Bacteria")
+
+merged_metagenomes_E <- subset_taxa(merged_metagenomes, Kingdom == "Eukaryota")
+
+merged_metagenomes_a <- subset_taxa(merged_metagenomes, Kingdom == "Archaea")
+
+merged_metagenomes_v <- subset_taxa(merged_metagenomes, Kingdom == "Viruses")
+
+sample_names(merged_metagenomes_b) <- "bacteria"
+sample_names(merged_metagenomes_E) <- "Eukaryota"
+sample_names(merged_metagenomes_a) <- "Archaea"
+sample_names(merged_metagenomes_v) <- "Viruses"
+
+c(sample_sums(merged_metagenomes_a), sample_sums(merged_metagenomes_b) , sample_sums(merged_metagenomes_E), sample_sums(merged_metagenomes_v))
+```
+```{r pretty data}
+# collect kingdoms seperately in data frames
+data_b <- data.frame(Samples = sample_names(merged_metagenomes_b),
+                   Reads = sample_sums(merged_metagenomes_b))
+
+data_e <- data.frame(Samples = sample_names(merged_metagenomes_E),
+                   Reads = sample_sums(merged_metagenomes_E))
+
+data_a <- data.frame(Samples = sample_names(merged_metagenomes_a),
+                   Reads = sample_sums(merged_metagenomes_a))
+
+data_v <- data.frame(Samples = sample_names(merged_metagenomes_v),
+                   Reads = sample_sums(merged_metagenomes_v))
+
+# merge kingdom data in to one data frame
+data_t <- rbind(data_b, data_e, data_a, data_v)
+```
+
+```{r plots}
+# plot number of reads per kingdom
+ggplot(data = data_t, mapping = aes(x = Samples, y = Reads, fill = Samples )) +
+  geom_col() +
+  theme_classic() +
+  ggtitle("Read count per kingdom") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+
+```
+
+```{r details of beacteria}
+# reload the biom data, edit column headers and sample name
+merged_metagenomes <- import_biom(data)
+merged_metagenomes@tax_table@.Data <- substring(merged_metagenomes@tax_table@.Data, 4)
+colnames(merged_metagenomes@tax_table@.Data)<- c("Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species")
+colnames(merged_metagenomes@otu_table) <- c("mock1")
+
+# check empty labels (empty = TRUE)
+summary(merged_metagenomes@tax_table@.Data== "")
+```
+
+```{r}
+# transform data frame for plotting
+glom <- tax_glom(merged_metagenomes, taxrank = "Species")
+mock1_metagenome_species <- psmelt(glom)
+
+# combine genus and species label for scientific naming in plot
+mock1_metagenome_species$Species <- as.character(mock1_metagenome_species$Species)
+mock1_metagenome_species$Species <- paste(mock1_metagenome_species[,]$Genus,mock1_metagenome_species[,]$Species,  sep=" ", collapse=NULL)
+# check label manipulation
+#unique(mock1_metagenome_species$Species)
+```
+
+
+```{r}
+id_species <- ggplot(data=mock1_metagenome_species, aes(x=Sample, y=Abundance, fill=Species))+ 
+  geom_bar(aes(), stat="identity", position="stack")
+id_species
+```
+```{r}
+mock1_metagenome_species$Species[mock1_metagenome_species$Abundance < 160000] <- "Species < 160.000 abund."
+
+id_species <- ggplot(data=mock1_metagenome_species, aes(x=Sample, y=Abundance, fill=Species))+ 
+  geom_bar(aes(), stat="identity", position="stack")
+id_species
+
+
+
+```
+
+
+```{r}
+# transform read count to percentages
+glom <- tax_glom(merged_metagenomes, taxrank = "Species")
+mock1_metagenome_species_percent <- psmelt(glom)
+# normalize read counts to percentages
+mock1_metagenome_species_percent$Abundance <- (mock1_metagenome_species_percent$Abundance*100)/sum(mock1_metagenome_species_percent$Abundance)
+
+# combine genus and species label for scientific naming in plot
+mock1_metagenome_species_percent$Species <- as.character(mock1_metagenome_species_percent$Species)
+mock1_metagenome_species_percent$Species <- paste(mock1_metagenome_species_percent[,]$Genus,mock1_metagenome_species_percent[,]$Species,  sep=" ", collapse=NULL)
+mock1_metagenome_species_percent$Species[mock1_metagenome_species_percent$Abundance < 0.5] <- "Species < 0.5% abund."
+#unique(mock1_metagenome_species_percent$Species)
+```
+
+
+```{r}
+id_species_percent <- ggplot(data=mock1_metagenome_species_percent, aes(x=Sample, y=Abundance, fill=Species))+ 
+  geom_bar(aes(), stat="identity", position="stack")
+
+# plot species identification
+gridExtra::grid.arrange(id_species, id_species_percent, ncol=2, top=textGrob("Identified species and their corresponding abundance\nread count (right)"))
+```
+
+```{r}
+# collect composition information
+mock1_composition <- as.data.frame(read.csv('/home/daur2/metagenomics/reader_data/HU_waternet_MOCK1_composition.csv', row.names=1, sep = ";"))
+
+mock1_composition$amount.. <- as.numeric(gsub(",", ".", mock1_composition$amount..))
+colnames(mock1_composition) <- c( "name","amount","amountP","sample_name","total_volume")
+
+# intersect data bases to collect overlap between composition and `kraken2` results
+mock1_and_composition_intersect <- mock1_metagenome_species_percent[mock1_metagenome_species_percent$Species %in% mock1_composition$name,]
+
+# collect species that are in composition and not in `kraken2` results
+`%!in%` <- Negate(`%in%`) # allow not in = !in
+comp_not_in_mock1 <- mock1_composition[mock1_composition$name %!in% mock1_metagenome_species_percent$Species,]
+
+# generate a list of species overlap between mock1 and composition
+unique(mock1_and_composition_intersect$Species)
+
+unique(comp_not_in_mock1$name)
+
+# compare labels between `kraken2` subset and composition and store percent values when labels are identical
+mock1_and_composition_intersect$amountP <- NA
+for (m1_label in mock1_and_composition_intersect$Species){
+  for (m1c_label in mock1_composition$name){
+    if(m1_label == m1c_label){
+      mock1_and_composition_intersect$amountP[mock1_and_composition_intersect$Species == m1_label] <- mock1_composition$amountP[mock1_composition$name == m1c_label]
+    }
+  }
+}
+library(reshape2)
+# collect plotting info and pretify layout format
+#colnames(mock1_and_composition_intersect)
+mock1_and_comp_plotting_data           <- mock1_and_composition_intersect[,c(10,3,11)]
+colnames(mock1_and_comp_plotting_data) <- c("species", "k_abundance", "c_abundance")
+
+mock1_and_comp_plotting_data       <- melt(mock1_and_comp_plotting_data, id.var = "species")
+mock1_and_comp_plotting_data$value <- as.numeric(mock1_and_comp_plotting_data$value)
+
+ggplot(mock1_and_comp_plotting_data, aes(x = species, y = value, fill = variable)) + 
+  geom_bar(aes(), stat="identity", position="dodge") +
+  theme_classic() +
+  ylab("Abundance (%)") +
+  xlab("") +
+  ggtitle("Abundance comparison between Kraken2 results and composition") +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  ylim(0,25) +
+  theme(axis.text.x = element_text(angle = -45, hjust = 0, vjust = 1)) +
+  scale_fill_manual(values=c("skyblue", "orangered"))
+
+
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

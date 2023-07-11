@@ -1,0 +1,141 @@
+
+
+body {
+  background-color: #F1F1F1 !important;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  color: #F1F1F1 !important;
+  
+}
+
+/*____Code Chunks____*/
+
+.sourceCode pre {
+  margin: 0 !important; /* makes space above and below symmetrical*/
+}
+
+.sourceCode {
+  margin-bottom: 0.85em; /* adds same amount of margin as a <p> would */
+}
+
+
+a.btn.pull-right.js-toolbar-action {
+  color: black !important;
+}
+
+a.btn.pull-left.js-toolbar-action {
+  color: black !important;
+}
+
+i.fa.fa-share-alt {
+  color: black !important;
+}
+
+i.fa.fa-download {
+  color: black !important;
+}
+
+i.fa.fa-font {
+  color: black !important;
+}
+
+.book.book-header.btn {
+  color: black !important;
+}
+
+div.dropdown.pull-left.js-toolbar-action {
+  color: black;
+}
+
+div.book-header.fixed {
+  color: black !important;
+    background: rgb(2,93,63);
+background: linear-gradient(90deg, rgba(2,93,63,1) 0%, rgba(43,122,90,1) 36%, rgba(43,143,163,1) 88%);
+padding-bottom: 0px;;
+}
+
+.book .book-header.fixed {
+  border-bottom: 0px;
+}
+/* The next two rules make the horizontal line go straight across in top navbar */
+
+.summary > li:first-child {
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+    background-color: #F1F1F1;
+}
+
+.book .book-summary ul.summary li.divider {
+    height: 0px;
+}
+
+/*------------ TOC --------------*/
+
+.book .book-summary {
+  background: #F1F1F1;
+  border-right: none;
+}
+
+.summary{
+font-family: 'Muli', sans-serif;
+}
+
+  /* all TOC list items, basically */
+
+.book .book-summary ul.summary li a, 
+.book .book-summary ul.summary li span {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #2f5175;
+  background-color: #F1F1F1;
+}
+
+.summary a:hover {
+  color: #778ca5 !important;
+  display: block;
+} 
+div.book-summary {
+  background-color: #F1F1F1;
+}
+
+div.book-body.fixed {
+  background: rgb(2,93,63);
+background: linear-gradient(90deg, rgba(2,93,63,1) 0%, rgba(43,122,90,1) 36%, rgba(43,143,163,1) 88%);;
+}
+
+.book .book-summary ul.summary li.active>a { /*active TOC links*/
+  color: #025d3f !important;
+  display: block;
+  border-left: solid 10px;
+  border-color: #025d3f !important;
+  padding-left: 15px !important;
+}  
+
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #75A1B6 ;
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h2 {
+  font-size: 30px;
+  font-weight: normal;
+  margin-top: 5px;
+  color: #75A1B6 ;
+}
+
+.bordershere {
+border-style: solid;
+border-width: 5px;
+border-color: purple;
+}
+
+
+
+

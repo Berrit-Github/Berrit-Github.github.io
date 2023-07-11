@@ -5,10 +5,11 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 css: "data/style.css"
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: ["bookdown_settings/book.bib", "bookdown_settings_packages.bib"]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 link-citations: yes
+split_bib: no
 ---
 
 # Welcome

@@ -1,0 +1,35 @@
+---
+title: "transpiracy Criteria"
+output: html_document
+date: "2023-05-22"
+---
+# The importance of reproducible data.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+In this mark down i will show you the importance of clear and readable data. For this I have selected an open source research with experimental data. I have used this article: "Generalized additive models to analyze non-linear trends in biomedical longitudinal data using R: Beyond repeated measures ANOVA and Linear Mixed Models" https://doi.org/10.1101/2021.06.10.447970. 
+his article explorers the uses of repeated measures analysis of variance (rm-ANOVA), linear mixed models (LMEMs) and Generalized additive models (GAMs). it shows that rm-ANOVA and LMEMs are used to look for linear trends is gathered data, But in most biomedical research there are no linear trends and the use of these Techniques can lead to biased conclusions. In contrast, GAMs do not assume linear trends in data and is there for more trust worthy the visualize this with simulated data about the oxygen saturation in tumors. 
+
+I have ranked this article according to the following Transparency Criteria.
+
+| Transparency Criteria       | Definition                                                                                                                                                                                                                                                               | Response Type                                                                                                                                     |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Study Purpose               | A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.                                                                                            | TRUE                                                                                                                                             |
+| Data Availability Statement | A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. | TRUE (it is not a section but it is mentiond where to find the data.)                                                                                                                                              |
+| Data Location               | Where the article’s data can be accessed, either raw or processed.                                                                                                                                                                                                       | https://github.com/aimundo/GAMs-biomedical-research a github repository.                                                                                               |
+| Study Location              | Author has stated in the methods section where the study took place or the data’s country/region of origin.                                                                                                                                                              | FALSE:                                                                        |
+| Author Review               | The professionalism of the contact information that the author has provided in the manuscript.                                                                                                                                                                           | TRUE Ariel I. Mundo1, Timothy J. Muldoon1* and John R. Tipton2  Corresponding author; email: tmuldoon@uark.edu |
+| Ethics Statement            | A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.                                                                                                                                                             | FALSE                                                                                                                                              |
+| Funding Statement           | A statement within the manuscript indicating whether or not the authors received funding for their research.                                                                                                                                                             | TRUE                                                                                                                                              |
+| Code Availability           | Authors have shared access to the most updated code that they used in their study, including code used for analysis.                                                                                                                                                     | TRUE                                                                                                                                              |
+
+The article ranks good on most of the points the criteria,
+
+
+
+
+
+
