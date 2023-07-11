@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="easy-ic50-plotting-package.html"/>
-<link rel="next" href="introduction-projecticum.html"/>
+<link rel="next" href="nutricia-project.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -145,7 +145,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="data/style.css" type="text/css" />
+<link rel="stylesheet" href="bookdown_settings/style.css" type="text/css" />
 </head>
 
 <body>
@@ -185,7 +185,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
-<li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
+<li class="chapter" data-level="10" data-path="nutricia-project.html"><a href="nutricia-project.html"><i class="fa fa-check"></i><b>10</b> Nutricia project</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="nutricia-project.html"><a href="nutricia-project.html#introduction-project"><i class="fa fa-check"></i><b>10.1</b> introduction project</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -211,7 +214,7 @@ div.csl-indent {
 <p>In this chapter we are going to make a rmarkdown with some parameters
 after adding our params we have the next html file in this we will show the covid cases and deaths of croatia of august 2021</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="params.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make screenshot of parameterized Rmarkdown</span></span>
-<span id="cb92-2"><a href="params.html#cb92-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;data/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
+<span id="cb92-2"><a href="params.html#cb92-2" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;bookdown_gallary/reports/portfolio_opdracht9.html&quot;</span>, <span class="st">&quot;bookdown_gallary/images/portfolio_opdracht9.png&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <p>next we can render this rmarkdown in two ways
 with the first way we can render the new file by setting the params like so</p>
@@ -220,10 +223,10 @@ with the first way we can render the new file by setting the params like so</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="params.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co">#rmarkdown::render(&quot;~/Rschool/dsfb2_workflows_portfolio/portfolio_opdracht9.Rmd&quot;, params = &quot;ask&quot;, output_file = &quot;denmark_8_2021_params_ask&quot;)</span></span></code></pre></div>
 <p>this will open a webpage with sliders and a list of country’s</p>
 <div class="figure">
-<img src="data/voorbeeld_params.PNG" alt="" />
+<img src="bookdown_gallary/images/voorbeeld_params.PNG" alt="" />
 <p class="caption">example of the slider</p>
 </div>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="params.html#cb95-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;data/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;data/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="params.html#cb95-1" aria-hidden="true" tabindex="-1"></a>webshot<span class="sc">::</span><span class="fu">webshot</span>(<span class="st">&quot;bookdown_gallary/reports/denmark_8_2021_params_ask.html&quot;</span>, <span class="st">&quot;bookdown_gallary/images/denmark_8_2021_params_ask.png&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 after looking at the graphs in the new markdown you can see the data has changed arcorindgly to the given params</p>
 
@@ -234,7 +237,7 @@ after looking at the graphs in the new markdown you can see the data has changed
         </div>
       </div>
 <a href="easy-ic50-plotting-package.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-projecticum.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="nutricia-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -265,7 +268,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/09_params_output.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/files_for_bookdown/09_params_output.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -283,8 +286,7 @@ gitbook.start({
 },
 "toc": {
 "collapse": "section"
-},
-"split_bib": false
+}
 });
 });
 </script>

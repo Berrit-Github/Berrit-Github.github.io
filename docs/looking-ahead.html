@@ -145,7 +145,7 @@ div.csl-indent {
 }
 </style>
 
-<link rel="stylesheet" href="data/style.css" type="text/css" />
+<link rel="stylesheet" href="bookdown_settings/style.css" type="text/css" />
 </head>
 
 <body>
@@ -185,7 +185,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8" data-path="easy-ic50-plotting-package.html"><a href="easy-ic50-plotting-package.html"><i class="fa fa-check"></i><b>8</b> easy IC50 plotting package</a></li>
 <li class="chapter" data-level="9" data-path="params.html"><a href="params.html"><i class="fa fa-check"></i><b>9</b> Params</a></li>
-<li class="chapter" data-level="10" data-path="introduction-projecticum.html"><a href="introduction-projecticum.html"><i class="fa fa-check"></i><b>10</b> introduction projecticum</a></li>
+<li class="chapter" data-level="10" data-path="nutricia-project.html"><a href="nutricia-project.html"><i class="fa fa-check"></i><b>10</b> Nutricia project</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="nutricia-project.html"><a href="nutricia-project.html#introduction-project"><i class="fa fa-check"></i><b>10.1</b> introduction project</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -261,10 +264,10 @@ On one side I have already have a lot of experience working because I did multip
 <pre><code>## The following object is masked from &#39;package:base&#39;:
 ## 
 ##     save.image</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="looking-ahead.html#cb44-1" aria-hidden="true" tabindex="-1"></a>BLM_Day_1 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1.png&#39;</span>)</span>
-<span id="cb44-2"><a href="looking-ahead.html#cb44-2" aria-hidden="true" tabindex="-1"></a>BLM_Day_2 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2.png&#39;</span>)</span>
-<span id="cb44-3"><a href="looking-ahead.html#cb44-3" aria-hidden="true" tabindex="-1"></a>BLM_Day_3 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3.png&#39;</span>)</span>
-<span id="cb44-4"><a href="looking-ahead.html#cb44-4" aria-hidden="true" tabindex="-1"></a>BLM_Day_4 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4.png&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="looking-ahead.html#cb44-1" aria-hidden="true" tabindex="-1"></a>BLM_Day_1 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_1.png&#39;</span>)</span>
+<span id="cb44-2"><a href="looking-ahead.html#cb44-2" aria-hidden="true" tabindex="-1"></a>BLM_Day_2 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_2.png&#39;</span>)</span>
+<span id="cb44-3"><a href="looking-ahead.html#cb44-3" aria-hidden="true" tabindex="-1"></a>BLM_Day_3 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_3.png&#39;</span>)</span>
+<span id="cb44-4"><a href="looking-ahead.html#cb44-4" aria-hidden="true" tabindex="-1"></a>BLM_Day_4 <span class="ot">&lt;-</span> <span class="fu">load.image</span>(<span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_4.png&#39;</span>)</span></code></pre></div>
 <p>after loading the pictures we convert them into greyscale. Most of the used images should already be greyscale but just in case we can cover for it.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="looking-ahead.html#cb45-1" aria-hidden="true" tabindex="-1"></a>BLM_Day_1_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_1)</span>
 <span id="cb45-2"><a href="looking-ahead.html#cb45-2" aria-hidden="true" tabindex="-1"></a>BLM_Day_2_gray <span class="ot">&lt;-</span> <span class="fu">grayscale</span>(BLM_Day_2)</span>
@@ -326,19 +329,19 @@ Next we will convert this to a pixel set. we repeat the process of checking the 
 <p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 this is the result of the pixelset, the pixel set ecentially marks every pixel that was black in the threshold.
 now we can use the fill and clean command on this to clear of some of the pixels we don’t want and highlight the left over pixels.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="looking-ahead.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="looking-ahead.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfoliox/vrij_opdracht/BLM_Day_1_circle.png&#39;)</span></span>
 <span id="cb51-2"><a href="looking-ahead.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_1)</span></span>
 <span id="cb51-3"><a href="looking-ahead.html#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_1,6) %&gt;% clean(3) </span></span>
 <span id="cb51-4"><a href="looking-ahead.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb51-5"><a href="looking-ahead.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2_circle.png&#39;)</span></span>
+<span id="cb51-5"><a href="looking-ahead.html#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_2_circle.png&#39;)</span></span>
 <span id="cb51-6"><a href="looking-ahead.html#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_2)</span></span>
 <span id="cb51-7"><a href="looking-ahead.html#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_2,6) %&gt;% clean(2) </span></span>
 <span id="cb51-8"><a href="looking-ahead.html#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb51-9"><a href="looking-ahead.html#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3_circle.png&#39;)</span></span>
+<span id="cb51-9"><a href="looking-ahead.html#cb51-9" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_3_circle.png&#39;)</span></span>
 <span id="cb51-10"><a href="looking-ahead.html#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_3)</span></span>
 <span id="cb51-11"><a href="looking-ahead.html#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_3,5) %&gt;% clean(0.5) </span></span>
 <span id="cb51-12"><a href="looking-ahead.html#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb51-13"><a href="looking-ahead.html#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4_circle.png&#39;)</span></span>
+<span id="cb51-13"><a href="looking-ahead.html#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co"># png(file=&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_4_circle.png&#39;)</span></span>
 <span id="cb51-14"><a href="looking-ahead.html#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(BLM_Day_4)</span></span>
 <span id="cb51-15"><a href="looking-ahead.html#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="co"># fill(px_4,6) %&gt;% clean(1.5) </span></span>
 <span id="cb51-16"><a href="looking-ahead.html#cb51-16" aria-hidden="true" tabindex="-1"></a></span>
@@ -404,26 +407,26 @@ now we have a pixel set with the outline of our cells.</p>
 <pre><code>## [1] &quot;7.03 %&quot;</code></pre>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="looking-ahead.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="fu">round</span>((<span class="fu">sum</span>(px_4)<span class="sc">-</span><span class="fu">sum</span>(px_1)) <span class="sc">/</span> (<span class="fu">height</span>(px_4) <span class="sc">*</span> <span class="fu">width</span>(px_4)) <span class="sc">*</span><span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">2</span>) , <span class="st">&quot;%&quot;</span> )</span></code></pre></div>
 <pre><code>## [1] &quot;35.25 %&quot;</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="looking-ahead.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;</span>)</span>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="looking-ahead.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_1_circle.png&#39;</span>)</span>
 <span id="cb82-2"><a href="looking-ahead.html#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_1)</span>
 <span id="cb82-3"><a href="looking-ahead.html#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_1,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> highlight</span>
 <span id="cb82-4"><a href="looking-ahead.html#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-5"><a href="looking-ahead.html#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_2_circle.png&#39;</span>)</span>
+<span id="cb82-5"><a href="looking-ahead.html#cb82-5" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_2_circle.png&#39;</span>)</span>
 <span id="cb82-6"><a href="looking-ahead.html#cb82-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_2)</span>
 <span id="cb82-7"><a href="looking-ahead.html#cb82-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_2,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="dv">2</span>) <span class="sc">%&gt;%</span> highlight</span>
 <span id="cb82-8"><a href="looking-ahead.html#cb82-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-9"><a href="looking-ahead.html#cb82-9" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_3_circle.png&#39;</span>)</span>
+<span id="cb82-9"><a href="looking-ahead.html#cb82-9" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_3_circle.png&#39;</span>)</span>
 <span id="cb82-10"><a href="looking-ahead.html#cb82-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_3)</span>
 <span id="cb82-11"><a href="looking-ahead.html#cb82-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_3,<span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">0.5</span>) <span class="sc">%&gt;%</span> highlight</span>
 <span id="cb82-12"><a href="looking-ahead.html#cb82-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-13"><a href="looking-ahead.html#cb82-13" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_4_circle.png&#39;</span>)</span>
+<span id="cb82-13"><a href="looking-ahead.html#cb82-13" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="at">file=</span><span class="st">&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/BLM_Day_4_circle.png&#39;</span>)</span>
 <span id="cb82-14"><a href="looking-ahead.html#cb82-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(BLM_Day_4)</span>
 <span id="cb82-15"><a href="looking-ahead.html#cb82-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fill</span>(px_4,<span class="dv">6</span>) <span class="sc">%&gt;%</span> <span class="fu">clean</span>(<span class="fl">1.5</span>) <span class="sc">%&gt;%</span> highlight</span></code></pre></div>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="looking-ahead.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colorise(BLM_Day_1,px,&quot;red&quot;,alpha=.5) %&gt;% plot</span></span>
 <span id="cb83-2"><a href="looking-ahead.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot(px) </span></span>
 <span id="cb83-3"><a href="looking-ahead.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co"># view(px)</span></span>
 <span id="cb83-4"><a href="looking-ahead.html#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="co"># imager::where(px) %&gt;% dplyr::summarise(mx=mean(x),my=mean(y))</span></span>
-<span id="cb83-5"><a href="looking-ahead.html#cb83-5" aria-hidden="true" tabindex="-1"></a><span class="co"># #BLM_Day_1_circle &lt;- load.image(&#39;C:/Users/Dell/Documents/Rschool/dsfb2_workflows_portfolio/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
+<span id="cb83-5"><a href="looking-ahead.html#cb83-5" aria-hidden="true" tabindex="-1"></a><span class="co"># #BLM_Day_1_circle &lt;- load.image(&#39;C:/Users/Dell/Documents/Rschool/Berrit-Github.github.io/bookdown_gallary/vrij_opdracht/data/BLM_Day_1_circle.png&#39;)</span></span>
 <span id="cb83-6"><a href="looking-ahead.html#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="co"># #unique()</span></span>
 <span id="cb83-7"><a href="looking-ahead.html#cb83-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sum(px)</span></span>
 <span id="cb83-8"><a href="looking-ahead.html#cb83-8" aria-hidden="true" tabindex="-1"></a><span class="co"># px</span></span>
@@ -511,7 +514,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05_portfolio_opdracht3_2.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/files_for_bookdown/05_portfolio_opdracht3_2.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -529,8 +532,7 @@ gitbook.start({
 },
 "toc": {
 "collapse": "section"
-},
-"split_bib": false
+}
 });
 });
 </script>

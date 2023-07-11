@@ -15,4 +15,5 @@ data-processing-and-dbeaver
 results
 easy-ic50-plotting-package
 params
-introduction-projecticum
+nutricia-project
+introduction-project
